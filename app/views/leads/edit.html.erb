@@ -1,0 +1,36 @@
+<% provide(:title, "Edit status") %>
+<h1> <%= @lead.name %></h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@lead) do |f| %>
+     
+      phone: <%= @lead.phone %>
+      <br/>
+      email: <%= @lead.email %>
+      <br/>
+      car type: <%= @lead.car_type %>
+      <br/>
+      manufacturer: <%= @lead.car_manufacturer%>
+      <br/>
+      car model: <%= @lead.car_model %>
+      <br/>
+      year: <%= @lead.car_year %><br/>
+      
+    
+      
+      <%= image_tag(@lead.photo1, :style=> "display:inline")%>
+
+       <%= image_tag(@lead.photo2, :style=> "display:inline")%>
+
+
+       <br/>
+       status: <%= select_tag(:status, options_for_select([['0', 0], ['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5], ['6', 6], ['7', 7], ['8', 8], ['9', 9]], selected: @lead.status )) %>
+      
+
+      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+    <% end %>
+
+   
+  </div>
+</div>

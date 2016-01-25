@@ -1,0 +1,25 @@
+<% provide(:title, @lead.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= @lead.name %>
+      </h1>
+      <%= @lead.phone %>
+      <br/>
+      email: <%= @lead.email %>
+      <br/>
+      <%= @lead.car_type %>
+      <br/>
+      <%= @lead.car_manufacturer%>
+      <br/>
+	  <%= @lead.car_year %>
+	  <br/>
+      <%= @lead.photo1 %>
+      <br/>
+      <%= @lead.photo2 %>
+      <br/>
+      <%= @lead.status %>
+    </section>
+  </aside>
+</div>

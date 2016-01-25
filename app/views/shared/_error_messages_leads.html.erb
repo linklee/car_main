@@ -1,0 +1,9 @@
+<% if @lead.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+    <% @lead.errors.full_messages.each do |msg| %>
+      <li>* <%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

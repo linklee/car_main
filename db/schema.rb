@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160124120300) do
+ActiveRecord::Schema.define(version: 20160125085606) do
+
+  create_table "leads", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "photo1"
+    t.string   "photo2"
+    t.string   "car_type"
+    t.string   "car_manufacturer"
+    t.integer  "car_year"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "status"
+    t.string   "car_model"
+    t.string   "coords"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"

@@ -146,7 +146,7 @@ aside {
 /* forms */
 
 input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
+  /*border: 1px solid #bbb;*/
   width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
@@ -181,4 +181,36 @@ input {
       border-bottom: 1px solid $grayLighter;
     }
   }
+}
+wizard {
+  display:none!important;
+}
+.wizard > .steps >ul {
+  display:none!important;
+}
+#steps-uid-0>.actions {
+    display:none!important;
+}
+.actions>ul>.disable {
+      display:none!important;
+}
+.hidden, vehicle_type {
+  display:none!important;
+}
+ul
+{
+    list-style-type: none;
+}
+.wizard > .steps >ul>li>a {
+  display:none!important;
+}
+.actions>ul>li {
+   display:inline;
+   margin-right: 10px;
+}
+.actions>ul {
+  margin: 0;
+}
+.actions>ul>li>a{ 
+   width: 60px;
 }
