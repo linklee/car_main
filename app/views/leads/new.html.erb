@@ -1,7 +1,6 @@
 <% provide(:title, 'New car') %>
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 <h1 style="display:none">New car</h1>
-
 <div class="row">
   <div class="span6 offset3">
         <%= render 'shared/error_messages_leads' %>
@@ -11,22 +10,37 @@
         <wizard>contact information</wizard>
           <section>
               <h3>contact information</h3>
+
               <%= f.text_field :name, placeholder: 'name', required: 'true' %>
               <%= f.text_field :phone, class: 'phone', placeholder: 'phone', required: 'true' %>
               <%= f.text_field :email, class: 'email', placeholder: 'email', required: 'true'%>
           </section>
           <wizard>car details</wizard>
           <section>
+
               <h3>car details</h3>
-               <%= f.text_field :car_type, placeholder: 'vehicle type', class: "vehicle_type hidden", required: 'true' %>
-              <%= image_tag("car_types/carwhite.png", :class => "car_type", :alt => "car")%>
+               <%= f.text_field :car_type, placeholder: 'vehicle type', class: "vehicle_type hidden", required: 'true' %>    
+              <div class="btn-group vehicle_group" role="group">
+                <button type="button" class="btn btn-primary">   
+                           <i class="fa fa-car"></i>Car   </button>
+                <button type="button" class="btn btn-primary">
+                  <i class="fa fa-truck"></i>Truck</button>
+                <button type="button" class="btn btn-primary">
+                  <i class="fa fa-bus"></i> Suv/Van</button>
+                <button type="button" class="btn btn-primary">
+                 <i class="fa fa-motorcycle"></i> Other</button>
+
+              </div>
+              <br/><br/>
+              <!---<%= image_tag("car_types/carwhite.png", :class => "car_type", :alt => "car")%>
               <%= image_tag("car_types/truckwhite.png", :class => "car_type", :alt => "truck")%>
               <%= image_tag("car_types/suvvanwhite.png", :class => "car_type", :alt => "van")%>
               <%= image_tag("car_types/otherwhite.png", :class => "car_type", :alt => "otherwhite")%>
-             
+             -!-->
               <%= f.text_field :car_manufacturer, placeholder: 'manufacturer', required: 'true' %>
               <%= f.text_field :car_model, placeholder: 'model', required: 'true' %>
               <%= f.text_field :car_year, placeholder: 'year', required: 'true'%>
+
           </section>
           <wizard>Select damaged areas</wizard>  
           <section>
@@ -53,4 +67,5 @@
         </div>
     <% end %>
   </div>
+
 </div>

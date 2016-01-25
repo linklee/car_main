@@ -28,20 +28,26 @@ $(function(){
 	        $('.email_submit').click();
 	    }
 	});
-   	$('.actions>ul>li>a').addClass('btn btn-primary')
-	$('.car_type').click(function(){
-    $this = $(this),
-	    src = $this.attr('src'); 
-	$('.car_type').each(function(){
-		 src1 = $(this).attr('src');
- 		 src1 = src1.replace('blue','white'); 
- 		 $(this).attr('src', src1);
-	})
-	if(src.substring(src.length-9) === 'white.png') { 
-		src = src.replace('white','blue'); 
-		$this.attr('src',src)} 
-		$('.vehicle_type').val($this.attr('alt'));
+   	$('.actions>ul>li>a').addClass('btn btn-primary');
+    $('.vehicle_group>button').click(function(){
+    	var $this = $(this);
+	   	$('.vehicle_group > .btn').removeClass('active');   // Remove any existing active classes
+		$this.addClass('active'); // Add the class to the nth element
+		$('.vehicle_type').val($this.html());
 	});
+	// $('.car_type').click(function(){
+ //    $this = $(this),
+	//     src = $this.attr('src'); 
+	// $('.car_type').each(function(){
+	// 	 src1 = $(this).attr('src');
+ // 		 src1 = src1.replace('blue','white'); 
+ // 		 $(this).attr('src', src1);
+	// })
+	// if(src.substring(src.length-9) === 'white.png') { 
+	// 	src = src.replace('white','blue'); 
+	// 	$this.attr('src',src)} 
+	// 	$('.vehicle_type').val($this.attr('alt'));
+	// });
     $(".phone").mask("(999) 999-9999");
     // $('.email_submit').click( function(){
     //   if( !validateEmail($(".email").val() ) ) { 
