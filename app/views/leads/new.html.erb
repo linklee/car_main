@@ -1,5 +1,5 @@
 <% provide(:title, 'New car') %>
-<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+
 <h1 style="display:none">New car</h1>
 <div class="row">
   <div class="span6 offset3">
@@ -21,13 +21,13 @@
               <h3>car details</h3>
                <%= f.text_field :car_type, placeholder: 'vehicle type', class: "vehicle_type hidden", required: 'true' %>    
               <div class="btn-group vehicle_group" role="group">
-                <button type="button" class="btn btn-primary">   
+                <button title ="Car" type="button" class="btn btn-primary">   
                            <i class="fa fa-car"></i>Car   </button>
-                <button type="button" class="btn btn-primary">
+                <button type="button" title ="Truck" class="btn btn-primary">
                   <i class="fa fa-truck"></i>Truck</button>
-                <button type="button" class="btn btn-primary">
+                <button type="button" title ="Suv/Van" class="btn btn-primary">
                   <i class="fa fa-bus"></i> Suv/Van</button>
-                <button type="button" class="btn btn-primary">
+                <button type="button" title ="Other" class="btn btn-primary">
                  <i class="fa fa-motorcycle"></i> Other</button>
 
               </div>

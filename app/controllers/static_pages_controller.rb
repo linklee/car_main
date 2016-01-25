@@ -8,5 +8,8 @@ class StaticPagesController < ApplicationController
   end
   def contact
   end
+  def check_lead_car_status
+  	@lead = Lead.find_by(phone: params[:phone])
+  end
 
 end

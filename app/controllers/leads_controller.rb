@@ -15,6 +15,7 @@ class LeadsController < ApplicationController
   end
 
   def show
+    #form_tag(controller: "people", action: "search", method: "get", class: "nifty_form")
     @lead = Lead.find(params[:id])
   end
   def new
@@ -24,7 +25,7 @@ class LeadsController < ApplicationController
     @lead = Lead.new(lead_params)
     if @lead.save
       #sign_in @lead
-	  flash[:success] = "Welcome!"
+	  flash[:success] = "Request successfully created!"
       redirect_to @lead
     else
       render 'new'

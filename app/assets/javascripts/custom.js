@@ -33,7 +33,7 @@ $(function(){
     	var $this = $(this);
 	   	$('.vehicle_group > .btn').removeClass('active');   // Remove any existing active classes
 		$this.addClass('active'); // Add the class to the nth element
-		$('.vehicle_type').val($this.html());
+		$('.vehicle_type').val($this.attr('title'));
 	});
 	// $('.car_type').click(function(){
  //    $this = $(this),
