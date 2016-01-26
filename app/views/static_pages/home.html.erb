@@ -7,7 +7,7 @@
     sample application.
   </h2>
 <%= form_tag check_lead_car_status_path, :method => :get do %>
-  <%= text_field_tag :phone, placeholder: 'phone' %>
+  <%= text_field_tag :phone, "", class: 'phone', placeholder: 'phone' %>
   <%= submit_tag "Check car status", class: "btn btn-large btn-primary" %>
 <% end %>
 

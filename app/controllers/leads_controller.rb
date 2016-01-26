@@ -23,10 +23,11 @@ class LeadsController < ApplicationController
   end
   def create
     @lead = Lead.new(lead_params)
+    @lead.status = '0';
     if @lead.save
       #sign_in @lead
 	  flash[:success] = "Request successfully created!"
-      redirect_to @lead
+      redirect_to "/"
     else
       render 'new'
     end

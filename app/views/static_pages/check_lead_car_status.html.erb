@@ -1,4 +1,9 @@
-<%-@leads.each do |lead| -%>
-The Status of the Car is: <%= lead.status %>
-Your name is: <%= @lead.email %>
-<% end -%>
+
+<div class= "text-center">
+	<% if @lead -%>
+		<h3>Current status of your car is <%= @lead.status %> </h3><br/><br/>
+		<%=image_tag("stat/" + @lead.status + ".jpg", :class => "status_image", alt: "status")%>
+		<% else -%>
+		<h3> No records found.</h3>
+		<% end -%>
+</div>
