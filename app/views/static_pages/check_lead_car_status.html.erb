@@ -2,7 +2,7 @@
 <div class= "text-center">
 	<% if @lead -%>
 		<h3>Current status of your car is <%= @lead.status %> </h3><br/><br/>
-		<%=image_tag("stat/" + @lead.status + ".jpg", :class => "status_image", alt: "status")%>
+		<%=image_tag("stat/speedometer" + @lead.status + ".png", :class => "status_image", alt: "status")%>
 		<% else -%>
 		<h3> No records found.</h3>
 		<% end -%>
