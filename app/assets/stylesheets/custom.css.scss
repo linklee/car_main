@@ -138,17 +138,12 @@ aside {
   }
 }
 
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-
 /* forms */
 
 input, textarea, select, .uneditable-input {
-  /*border: 1px solid #bbb;*/
-  width: 100%;
+  /*width: 100%;*/
   margin-bottom: 15px;
+  display:block;
   @include box_sizing;
 }
 
@@ -213,4 +208,55 @@ ul
 }
 .actions>ul>li>a{ 
    width: 60px;
+}
+.logo {
+  width: 100px;    height: 41px;
+}
+#logo {
+  position: absolute;
+  padding: 0;
+  left:40px;
+}
+.social_icon {
+  margin-top:4px;
+}
+.logo-sign { 
+    font-size: 20px;
+    position: absolute;
+    margin-top: 8px;
+    color: white;
+    float:left; margin-left:150px;
+}
+.whyus {
+  margin-top:70px;
+}
+.whyus > div >h2 {
+  font-size: 36px;
+  margin-bottom: 3px
+}
+.like-header {
+      font-weight: 700;
+      font-size: 36px;
+      margin-top:70px;
+}
+p.port{
+  position: absolute;
+    margin-top: 70px;
+    margin-left: 40px;
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    background: rgba(0,0,0,0.5);
+    z-index:2;
+}
+.img-portfolio{
+  width:95%;
+}
+.portfolio > div {
+  overflow:hidden;
+  max-height:270px;
+}
+p.port1{
+   margin-left: 10%;
+        margin-right: 10%; 
 }

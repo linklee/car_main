@@ -1,0 +1,224 @@
+/*!
+ * Start Bootstrap - Modern Business HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Global Styles */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.img-portfolio {
+    margin-bottom: 30px;
+}
+
+.img-hover:hover {
+    opacity: 0.8;
+}
+
+/* Home Page Carousel */
+
+header.carousel {
+    height: 50%;
+    min-height: 370px;
+    margin-top:-10px;
+}
+
+header.carousel .item,
+header.carousel .item.active,
+header.carousel .carousel-inner {
+    height: 100%;
+}
+
+header.carousel .fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+/* 404 Page Styles */
+
+.error-404 {
+    font-size: 100px;
+}
+
+/* Pricing Page Styles */
+
+.price {
+    display: block;
+    font-size: 50px;
+    line-height: 50px;
+}
+
+.price sup {
+    top: -20px;
+    left: 2px;
+    font-size: 20px;
+}
+
+.period {
+    display: block;
+    font-style: italic;
+}
+
+/* Footer Styles */
+
+footer {
+    margin: 50px 0;
+}
+
+/* Responsive Styles */
+
+@media(max-width:991px) {
+    .customer-img,
+    .img-related {
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width:767px) {
+    .img-portfolio {
+        margin-bottom: 15px;
+    }
+
+    header.carousel .carousel {
+        height: 70%;
+    }
+    
+}
+.carousel-control {
+    display: none;
+}
+
+/*I will regret doing this (or not!)*/
+ .carousel-caption {
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    left: 10%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);height: 290px;
+}
+.carousel-h1 {
+        margin-bottom: 10px;
+}
+
+#menuToggle {
+    position: absolute;  
+    margin-left: 6px; 
+    margin-top: 5px; 
+    cursor: pointer;
+}
+#menuToggle:hover {
+    color:white;
+}
+/*trash with open menu lol*/
+.menu img.logo {
+    margin: 20px 0;
+    max-width: 160px;
+}
+nav.menu {
+        background: rgba(27,27,27,1);
+}
+.menu a {
+    margin-left: 20px;
+    color: #808080;
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.menu a:hover {
+    color: #ffffff;
+}
+
+.menu a:active {
+    color: #ffffff;
+}
+
+.menu a > i {
+    float: left;
+    display: inline-block;
+    vertical-align: middle; 
+    text-align: left;
+    width: 25px;
+    font-size: 16px;
+    line-height: 40px;
+    margin: 25px 2px;
+}
+
+.menu-close {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    font-size: 14px;
+    color: #808080;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    top: 20px;
+    right: 5px;
+    -webkit-transition: all .1s ease-in-out;
+       -moz-transition: all .1s ease-in-out;
+        -ms-transition: all .1s ease-in-out;
+         -o-transition: all .1s ease-in-out;
+            transition: all .1s ease-in-out;
+}
+
+.menu-close:hover {
+    color: #ffffff;
+    -webkit-transition: all .1s ease-in-out;
+       -moz-transition: all .1s ease-in-out;
+        -ms-transition: all .1s ease-in-out;
+         -o-transition: all .1s ease-in-out;
+            transition: all .1s ease-in-out;
+}
+
+/* Push the body after clicking the menu button */
+.body-push {
+    overflow-x: hidden;
+    position: relative;
+    left: 0;
+}
+
+.body-push-toright {
+    left: 200px;
+}
+
+.body-push-toleft {
+    left: -200px;
+}
+
+.menu,
+.body-push {
+    -webkit-transition: all .3s ease;
+       -moz-transition: all .3s ease;
+        -ms-transition: all .3s ease;
+         -o-transition: all .3s ease;
+            transition: all .3s ease;
+}
+
+.menu {
+    position: fixed;
+    left: 0px;
+    width: 260px;
+    height: 100%;
+    top: 0;
+    z-index: 999;
+    text-align: left;
+}

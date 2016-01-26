@@ -1,8 +1,8 @@
 <% provide(:title, 'New car') %>
 
 <h1 style="display:none">New car</h1>
-<div class="row">
-  <div class="span6 offset3">
+ <div class=" center  ">
+
         <%= render 'shared/error_messages_leads' %>
 
     <%= form_for(@lead,:html => {:class => 'new_form', :onkeypress => "return event.keyCode != 13;"}) do |f| %>
@@ -11,8 +11,8 @@
           <section>
               <h3>contact information</h3>
 
-              <%= f.text_field :name, placeholder: 'name', required: 'true' %>
-              <%= f.text_field :phone, class: 'phone', placeholder: 'phone', required: 'true' %>
+              <%= f.text_field :name, placeholder: 'name', required: 'true' %><br/>
+              <%= f.text_field :phone, class: 'phone', placeholder: 'phone', required: 'true' %><br/>
               <%= f.text_field :email, class: 'email', placeholder: 'email', required: 'true'%>
           </section>
           <wizard>car details</wizard>
@@ -37,8 +37,8 @@
               <%= image_tag("car_types/suvvanwhite.png", :class => "car_type", :alt => "van")%>
               <%= image_tag("car_types/otherwhite.png", :class => "car_type", :alt => "otherwhite")%>
              -!-->
-              <%= f.text_field :car_manufacturer, placeholder: 'manufacturer', required: 'true' %>
-              <%= f.text_field :car_model, placeholder: 'model', required: 'true' %>
+              <%= f.text_field :car_manufacturer, placeholder: 'manufacturer', required: 'true' %><br/>
+              <%= f.text_field :car_model, placeholder: 'model', required: 'true' %><br/>
               <%= f.text_field :car_year, placeholder: 'year', required: 'true'%>
 
           </section>
@@ -52,20 +52,25 @@
              <h3>Take the first photo from straight on</h3>
              <%= image_tag("photo1.jpg", :class => "car_photo")%>
              <br/>
-             <%= f.file_field :photo1, required: 'true'  %><br/>
+             <center>
+             <%= f.file_field :photo1, required: 'true'  %>
+             </center>
+             <br/>
           </section>
           <wizard>Now take a photo from a side angle</wizard>
           <section>
               <h3>Now take a photo from a side angle</h3>
               <%= image_tag("photo2.jpg", :class => "car_photo")%>
-              
+             <center>
+
               <%= f.file_field :photo2 , required: 'true' %><br/>
+                           </center>
+
               <%= f.submit "Finish", class: "btn btn-large btn-primary hidden email_submit" %>
 
           </section>
 
         </div>
     <% end %>
-  </div>
-
+  
 </div>

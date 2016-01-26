@@ -1,11 +1,45 @@
+<nav class="menu menu-open hidden" id="theMenu">
+    <div class="menu-wrap">
+     
+      <i class="ion-android-close menu-close"></i>
+      <a href="/" class="smoothScroll">Home</a>
+      <a href="/beforeafter" class="smoothScroll">before/after</a>
+      <a href="/contact" class="smoothScroll">Contacts</a>
+      <a href="#demos" class="smoothScroll">About us</a>
+      <a href="#buy" class="smoothScroll">Services</a>
+      <a href="#appointment" class="smoothScroll">Appointment</a>
+    </div>
+    
+    <!-- Menu button -->
+    <div id="menuToggle" class="active"><i class="ion-navicon-round"></i></div>
+  </nav>
+
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
+         <i class="fa fa-bars fa-2x" id ="menuToggle"></i>
+
     <div class="container">
-      <%= link_to "sample app", root_path, id: "logo" %>
+
+      <a href="/" id= "logo" >      <%= image_tag("logo.jpg", :class => "logo", :alt => "logo")%>
+        </a>
+       <span class="logo-sign" style="font-size:20px">Fast Autobody Center </span>
       <nav>
-        <ul class="nav pull-right">
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Help", help_path %></li>
+
+
+        <ul class="nav pull-right right_nav">
+          <li>             
+          </li>
+          <li><%= link_to "818-844-7529", "#" %></li>
+          <li><%= link_to "Contacts", contact_path %></li>
+          <li><%= link_to "", "http://twitter.com", class: "fa fa-twitter social_icon" %>
+          </li>
+          <li>
+            <%= link_to "", "http://facebook.com", class: "fa fa-facebook social_icon" %>
+          </li>
+          <li>  
+            <%= link_to "", "http://youtube.com", class: "fa fa-youtube social_icon" %>
+          </li>
+         
           <% if signed_in? && current_user.admin? %>
             <li><%= link_to "Leads", leads_path %></li>
             <li id="fat-menu" class="dropdown">
@@ -22,7 +56,7 @@
               </ul>
             </li>
           <% else %>
-            <li><%= link_to "Sign in", signin_path %></li>
+            <!--<li><%= link_to "Sign in", signin_path %></li>!-->
           <% end %>
         </ul>
       </nav>

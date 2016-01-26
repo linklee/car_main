@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!-- saved from url=(0020)http://0.0.0.0:3000/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Ruby on Rails Tutorial Sample App</title>
+    <link data-turbolinks-track="true" href="./Ruby on Rails Tutorial Sample App_files/application.css" media="all" rel="stylesheet">
+<link data-turbolinks-track="true" href="./Ruby on Rails Tutorial Sample App_files/custom.css" media="all" rel="stylesheet">
+<link data-turbolinks-track="true" href="./Ruby on Rails Tutorial Sample App_files/modern-business.css" media="all" rel="stylesheet">
+<link data-turbolinks-track="true" href="./Ruby on Rails Tutorial Sample App_files/sessions.css" media="all" rel="stylesheet">
+<link data-turbolinks-track="true" href="./Ruby on Rails Tutorial Sample App_files/static_pages.css" media="all" rel="stylesheet">
+<link data-turbolinks-track="true" href="./Ruby on Rails Tutorial Sample App_files/users.css" media="all" rel="stylesheet">
+<link data-turbolinks-track="true" href="./Ruby on Rails Tutorial Sample App_files/font-awesome.css" media="all" rel="stylesheet">
+    <script data-turbolinks-track="true" src="./Ruby on Rails Tutorial Sample App_files/jquery.js"></script>
+<script data-turbolinks-track="true" src="./Ruby on Rails Tutorial Sample App_files/jquery_ujs.js"></script>
+<script data-turbolinks-track="true" src="./Ruby on Rails Tutorial Sample App_files/bootstrap-transition.js"></script>
+<script data-turbolinks-track="true" src="./Ruby on Rails Tutorial Sample App_files/bootstrap-affix.js"></script>
+<script data-turbolinks-track="true" src="./Ruby on Rails Tutorial Sample App_files/bootstrap-alert.js"></script>
+<script data-turbolinks-track="true" src="./Ruby on Rails Tutorial Sample App_files/bootstrap-button.js"></script>
+<script data-turbolinks-track="true" src="./Ruby on Rails Tutorial Sample App_files/bootstrap-carousel.js"></script>
+<script data-turbolinks-track="true" src="./Ruby on Rails Tutorial Sample App_files/bootstrap-collapse.js"></script>
+<script data-turbolinks-track="true" src="./Ruby on Rails Tutorial Sample App_files/bootstrap-dropdown.js"></script>
+<script data-turbolinks-track="true" src="./Ruby on Rails Tutorial Sample App_files/bootstrap-modal.js"></script>
+<script data-turbolinks-track="true" src="./Ruby on Rails Tutorial Sample App_files/bootstrap-scrollspy.js"></script>
+<script data-turbolinks-track="true" src="./Ruby on Rails Tutorial Sample App_files/bootstrap-tab.js"></script>
+<script data-turbolinks-track="true" src="./Ruby on Rails Tutorial Sample App_files/bootstrap-tooltip.js"></script>
+<script data-turbolinks-track="true" src="./Ruby on Rails Tutorial Sample App_files/bootstrap-popover.js"></script>
+<script data-turbolinks-track="true" src="./Ruby on Rails Tutorial Sample App_files/bootstrap-typeahead.js"></script>
+<script data-turbolinks-track="true" src="./Ruby on Rails Tutorial Sample App_files/bootstrap.js"></script>
+<script data-turbolinks-track="true" src="./Ruby on Rails Tutorial Sample App_files/turbolinks.js"></script>
+<script data-turbolinks-track="true" src="./Ruby on Rails Tutorial Sample App_files/custom.js"></script>
+<script data-turbolinks-track="true" src="./Ruby on Rails Tutorial Sample App_files/jquery.maskedinput.min.js"></script>
+<script data-turbolinks-track="true" src="./Ruby on Rails Tutorial Sample App_files/jquery.steps.min.js"></script>
+<script data-turbolinks-track="true" src="./Ruby on Rails Tutorial Sample App_files/sessions.js"></script>
+<script data-turbolinks-track="true" src="./Ruby on Rails Tutorial Sample App_files/static_pages.js"></script>
+<script data-turbolinks-track="true" src="./Ruby on Rails Tutorial Sample App_files/users.js"></script>
+<script data-turbolinks-track="true" src="./Ruby on Rails Tutorial Sample App_files/application.js"></script>
+    <meta content="authenticity_token" name="csrf-param">
+<meta content="6LttIXRCLeVEZwkZoGdvAd2xTK+PkrN3yG5OFGGtzks=" name="csrf-token">
+    <script src="./Ruby on Rails Tutorial Sample App_files/jquery.validate.min.js"></script>
+    <!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  </head>
+
+  <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <a href="./Ruby on Rails Tutorial Sample App_files/Ruby on Rails Tutorial Sample App.html" id="logo">      <img alt="logo" class="logo" src="./Ruby on Rails Tutorial Sample App_files/logo.jpg">
+      </a>
+
+      <nav>
+        <ul class="nav pull-right">
+          <li><a href="./Ruby on Rails Tutorial Sample App_files/Ruby on Rails Tutorial Sample App.html">Home</a></li>
+          <li><a href="http://0.0.0.0:3000/help">Help</a></li>
+            <li><a href="http://0.0.0.0:3000/signin">Sign in</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+       <!-- Header Carousel -->
+    <header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="fill" style="background-image:url(/assets/slider1.jpg);"></div>
+                <div class="carousel-caption">
+                <h1 class="carousel-h1">Free online estimate</h1>
+                <a class="btn btn-large btn-danger" href="http://0.0.0.0:3000/new">Start here</a>
+                 
+                <br><br><br><br>
+                <form accept-charset="UTF-8" action="http://0.0.0.0:3000/check_car_status" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+                  <input class="phone carousel-phone" id="phone" name="phone" placeholder="phone" type="text" value="">
+                  <br>
+                  <input class="btn btn-medium btn-danger" name="commit" type="submit" value="Check car status">
+</form>                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url(/assets/slider4.jpg);"></div>
+                <div class="carousel-caption">
+                    <h2>Caption 2</h2>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="http://0.0.0.0:3000/#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="http://0.0.0.0:3000/#myCarousel" data-slide="next">
+            <span class="fa fa-next"></span>
+        </a>
+    </header>
+   <script>
+    $('.carousel').carousel({
+        interval: 5000000 //changes the speed
+    })
+    </script>
+
+
+    <div class="container">
+      
+<div class="center hero-unit">
+  
+
+
+<a href="http://rubyonrails.org/"><img alt="Rails" src="./Ruby on Rails Tutorial Sample App_files/rails.png"></a>
+</div>
+
+      <footer class="footer">
+  <small>
+    <a href="http://railstutorial.org/">Rails Tutorial</a>
+    by Michael Hartl
+  </small>
+  <nav>
+    <ul>
+      <li><a href="http://0.0.0.0:3000/about">About</a></li>
+      <li><a href="http://0.0.0.0:3000/contact">Contact</a></li>
+      <li><a href="http://news.railstutorial.org/">News</a></li>
+    </ul>
+  </nav>
+</footer>
+
+      <pre class="debug_dump">--- !ruby/hash:ActionController::Parameters
+controller: static_pages
+action: home
+</pre>
+
+    </div>
+  
+</body></html>

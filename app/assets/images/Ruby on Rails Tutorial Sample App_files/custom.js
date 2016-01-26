@@ -1,10 +1,5 @@
 $(function(){
 	 //form wizard start
-	var width = $(window).width();
-	console.log(width);
-    if(width <900) {$('.right_nav').addClass('hidden');
-    if(width <330) { $('.logo-sign').addClass('hidden');}
-	};
    var form = $(".new_form"); 
    form.validate({
 	    errorPlacement: function errorPlacement(error, element) { element.before(error); },
@@ -60,12 +55,7 @@ $(function(){
     //    return false;}
    	// });
 
-  // Menu settings
-			$('#menuToggle, .menu-close').on('click', function(){
-				$('#menuToggle').toggleClass('active');
-				/*$('body').toggleClass('body-push-toleft');*/
-				$('#theMenu').toggleClass('hidden');
-			});
+  
 
  
 });
@@ -74,3 +64,4 @@ function validateEmail(email) {
  	var re = /\S+@\S+\.\S+/;
     return re.test(email);
 }
+;
