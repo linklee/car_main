@@ -18,6 +18,7 @@ $(function(){
 	    transitionEffect: "slideLeft",
 	    enableFinishButton: 1,
 	    enablePagination: 1,
+	    transitionEffectSpeed: 0,
 	    onStepChanging: function (event, currentIndex, newIndex)
 	    {
 	        form.validate().settings.ignore = ":disabled,:hidden";
