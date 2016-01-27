@@ -228,7 +228,7 @@ ul
     float:left; margin-left:150px;
 }
 .whyus {
-  margin-top:70px;
+  
 }
 .whyus > div >h2 {
   font-size: 36px;
@@ -259,4 +259,43 @@ p.port{
 p.port1{
    margin-left: 10%;
         margin-right: 10%; 
+}
+
+.port_wrap {
+    min-width: 240px;
+    min-height: 200px;
+    background-size: cover;
+    margin: 5px;width:100%; height:100%;
+}
+.port_text {
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    background: rgba(0,0,0,0.5);
+    margin-top:15%;
+    margin-bottom:5%;
+    display: inline-block;
+}
+
+.port_text_2lines{
+  margin-top:10%;
+}
+.port_wrap:hover {
+  opacity:0.9;
+}
+
+.point {
+  background: url('point.jpg');
+  height:500px;
+  background-size:cover;
+  color:white;
+  text-align:center;
+}
+.point-h {
+  margin-top:130px;
+  color: rgb(0, 109, 204);
+  font-size: 3em;
+  font-weight: 700;
+  display: inline-block;
+  background: rgba(0,0,0,0.9);
 }

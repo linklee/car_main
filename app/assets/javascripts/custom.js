@@ -62,12 +62,21 @@ $(function(){
    	// });
 
   // Menu settings
-			$('#menuToggle, .menu-close').on('click', function(){
-				$('#menuToggle').toggleClass('active');
-				/*$('body').toggleClass('body-push-toleft');*/
-				$('#theMenu').toggleClass('hidden');
-			});
+	$('#menuToggle, .menu-close').on('click', function(){
+		$('#menuToggle').toggleClass('active');
+		/*$('body').toggleClass('body-push-toleft');*/
+		$('#theMenu').toggleClass('hidden');
+	});
+	$('.menu_opener').on('click', function(){
+		$('#theMenu').toggleClass('hidden');
 
+		return false;
+	});
+	$('.menu_closer').on('click', function(){
+		$('#theMenu').toggleClass('hidden');
+
+		return false;
+	});
  
 });
 
