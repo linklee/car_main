@@ -1,0 +1,31 @@
+<h1>Listing bas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Src</th>
+      <th>Descr</th>
+      <th>Title</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bas.each do |ba| %>
+      <tr>
+        <td><%= ba.src %></td>
+        <td><%= ba.descr %></td>
+        <td><%= ba.title %></td>
+        <td><%= link_to 'Show', ba %></td>
+        <td><%= link_to 'Edit', edit_ba_path(ba) %></td>
+        <td><%= link_to 'Destroy', ba, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ba', new_ba_path %>

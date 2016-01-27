@@ -1,4 +1,6 @@
 SampleApp::Application.routes.draw do
+  resources :bas
+
   resources :users
   resources :leads
 

@@ -11,9 +11,11 @@
     </div>
     
     <!-- Menu button -->
-    <div id="menuToggle" class="active"><i class="ion-navicon-round"></i></div>
   </nav>
+<% if current_page?('/') %>
+
 <span href="#" class="menu_opener">Menu</span>
+<% end  %> 
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
          <i class="fa fa-bars fa-2x" id ="menuToggle"></i>
@@ -42,6 +44,8 @@
          
           <% if signed_in? && current_user.admin? %>
             <li><%= link_to "Leads", leads_path %></li>
+            <li><%= link_to "Before/after", bas_path %></li>
+
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Account <b class="caret"></b>

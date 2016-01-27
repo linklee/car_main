@@ -240,3 +240,6 @@ a.menu_closer{
     right: 10px;
     top: 39px;
 }
+a{
+    background: none;
+}

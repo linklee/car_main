@@ -5,6 +5,10 @@ $(function(){
     if(width <900) {$('.right_nav').addClass('hidden');
     if(width <330) { $('.logo-sign').addClass('hidden');}
 	};
+	//hide menu
+	if(location.search != "") {
+		$(".menu_opener").addClass('hidden');
+	}
    var form = $(".new_form"); 
    form.validate({
 	    errorPlacement: function errorPlacement(error, element) { element.before(error); },
@@ -77,7 +81,7 @@ $(function(){
 
 		return false;
 	});
- 
+ $('[data-toggle="tooltip"]').tooltip();
 });
 
 function validateEmail(email) {
