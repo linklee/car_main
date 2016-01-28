@@ -3,6 +3,8 @@ $(function(){
 	 var width = $(window).width();
 	 console.log(width);
 	 if(width <900) {$('.right_nav').addClass('hidden');
+	 $('.fill')[0].style.backgroundSize =" 100% 100%"
+	 $('.fill')[1].style.backgroundSize =" 100% 100%"
 	 if(width <330) { $('.logo-sign').addClass('hidden');}
 	};
 	//hide menu
