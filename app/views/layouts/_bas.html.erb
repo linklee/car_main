@@ -1,14 +1,40 @@
-<center>
-  <h2 class= "like-header">Before and after</h2>
-  <!--begin!-->
-<div class="pure-g center portfolio " >
-  <% Ba.find_each do |ba| %>
-     
-
-    <div class="pure-u-1 pure-u-md-1-3">
-          <a  target = "_blank" href ="<%= ba.src %>" style="background:none"><img class="ba"  data-toggle="tooltip" title= "<%= ba.title%>" style="width:100%;height:100%; min-height:250px;margin:5px" src="<%= ba.src %>"/></a>
-    </div>
-    <% end %>
+<center id="ba" >
+	<h2 class= "like-header">Before and after</h2>
+	<!--begin!-->
+	<div class="pure-g center portfolio " >
+		<% Ba.find_each do |ba| %>
 
 
+		<div class="pure-u-1 pure-u-md-1-3">
+			<a href="#"  onclick = "show_ba('<%= 'ba'+ba.id.to_s %>');  return false;" target = "_blank" style="background:none"><img class="ba"  data-toggle="tooltip" title= "<%= ba.title%>" style="width:100%;height:100%; min-height:250px;margin:5px" src="<%= ba.src %>"/></a>
+		</div>
+
+
+
+
+		<% end %>
+	</div>
+
+	<!-- popup !-->
+	<% Ba.find_each do |ba| %>
+	<div id="<%="ba" + ba.id.to_s %>" class="why-modal modal fade" role="dialog" style="z-index:-1;">
+		<div class="modal-dialog  modal-lg">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title"><%= ba.title %></h4>
+				</div>
+				<div class="modal-body">
+					<%=image_tag(ba.src, :class => "whypopupimg") %>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<% end %>
 </center>

@@ -4,10 +4,10 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-/* Global Styles */
+ /* Global Styles */
 
-html,
-body {
+ html,
+ body {
     height: 100%;
 }
 
@@ -99,10 +99,10 @@ footer {
 }
 
 /*I will regret doing this (or not!)*/
- .carousel-caption {
+.carousel-caption {
     position: absolute;
     right: 10%;
-    top: 10%;
+    top: 11%;
     left: 10%;
     z-index: 10;
     padding-top: 20px;
@@ -113,8 +113,10 @@ footer {
     background: none;
 }
 .carousel-h1 {
-        margin-bottom: 10px;
-        font-size: 4em;
+    margin-top:-1%;
+    margin-bottom: 10px;
+    font-size: 4em;
+
 }
 
 #menuToggle {
@@ -122,7 +124,9 @@ footer {
     margin-left: 6px; 
     margin-top: 5px; 
     cursor: pointer;
+    color:#999;
 }
+
 #menuToggle:hover {
     color:white;
 }
@@ -132,7 +136,7 @@ footer {
     max-width: 160px;
 }
 nav.menu {
-        background: rgba(27,27,27,1);
+    background: rgba(27,27,27,1);
 }
 .menu a {
     margin-left: 20px;
@@ -176,19 +180,19 @@ nav.menu {
     top: 20px;
     right: 5px;
     -webkit-transition: all .1s ease-in-out;
-       -moz-transition: all .1s ease-in-out;
-        -ms-transition: all .1s ease-in-out;
-         -o-transition: all .1s ease-in-out;
-            transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    -ms-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
 }
 
 .menu-close:hover {
     color: #ffffff;
     -webkit-transition: all .1s ease-in-out;
-       -moz-transition: all .1s ease-in-out;
-        -ms-transition: all .1s ease-in-out;
-         -o-transition: all .1s ease-in-out;
-            transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    -ms-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
 }
 
 /* Push the body after clicking the menu button */
@@ -209,10 +213,10 @@ nav.menu {
 .menu,
 .body-push {
     -webkit-transition: all .3s ease;
-       -moz-transition: all .3s ease;
-        -ms-transition: all .3s ease;
-         -o-transition: all .3s ease;
-            transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
 }
 
 .menu {
@@ -223,8 +227,11 @@ nav.menu {
     top: 0;
     z-index: 999;
     text-align: left;
+
 }
 .menu_opener {
+    color: #999;
+    /*
     position: absolute;
     z-index: 9;
     font-size: 2em;
@@ -233,6 +240,13 @@ nav.menu {
     color: black;
     margin-left: 160px;
     cursor:pointer;
+    }*/
+}
+.menu_opener:hover {
+    color:white;
+    .logo-sign {
+        text-decoration: none;
+    }
 }
 a.menu_closer{
     position: absoulute!important;
@@ -242,4 +256,29 @@ a.menu_closer{
 }
 a{
     background: none;
+}
+.carousel-phone {
+    margin-top:28%;
+    margin-bottom: 50px
+}
+.stuff {
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom-color: #ADADAD;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    height:70px;
+    position: absolute;
+    top: 73px;
+    width: 100%;
+    z-index: 98;
+    height: 70px;
+    color:white;
+}
+/*.social_icon {
+    margin-top: -10px;
+margin-left: -90px;
+}*/
+
+.carousel-indicators{
+    margin-top: 10px;z-index: 1000;
 }

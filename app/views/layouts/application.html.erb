@@ -16,6 +16,7 @@
   </head>
 
   <body>
+
     <%= render 'layouts/header' %>
     <% if current_page?('/') %>
       <%= render 'layouts/carousel' %>
@@ -26,6 +27,9 @@
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
       <%= yield %>
+        <% if current_page?('/') %>
+  <%= render 'static_pages/whyspopup' %>
+  <% end %>
 
       <%= render 'layouts/footer' %>
 
