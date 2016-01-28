@@ -280,5 +280,5 @@ margin-left: -90px;
 }*/
 
 .carousel-indicators{
-    margin-top: 10px;z-index: 1000;
+    margin-top: 10px;z-index: 1000;display: none;
 }
