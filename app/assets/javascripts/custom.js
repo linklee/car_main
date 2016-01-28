@@ -6,9 +6,9 @@ $(function(){
 	 if(width <330) { $('.logo-sign').addClass('hidden');}
 	};
 	//hide menu
-	if(location.search != "") {
-		$(".menu_opener").addClass('hidden');
-	}
+	// if(location.search != "") {
+	// 	$(".menu_opener").addClass('hidden');
+	// }
 	var form = $(".new_form"); 
 	form.validate({
 		errorPlacement: function errorPlacement(error, element) { element.before(error); },
