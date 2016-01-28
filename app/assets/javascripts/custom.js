@@ -3,7 +3,7 @@ $(function(){
 	 var width = $(window).width();
 	 console.log(width);
 	 if(width <900) {$('.right_nav').addClass('hidden');
-	 if($('.fill'){
+	 if($('.fill').size() != 0){
 	 	$('.fill')[0].style.backgroundSize =" 100% 100%";
 	 	$('.fill')[1].style.backgroundSize =" 100% 100%";
 	 	$('.fill')[1].style.height =" 100%";
