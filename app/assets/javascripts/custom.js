@@ -81,6 +81,22 @@ $(function(){
 
 		return false;
 	});
+	var h = $('.port-click').height();
+	$(".middle-wrap").height(h);
+
+	
+	$('.port-click').on ('mouseout',function () {
+		var $this = $(this), height = $this.height(),
+			$wrap = $this.find(".middle-wrap");
+		$wrap.animate({'height':height},200);
+		$wrap.clearQueue() 
+	});
+	$('.port-click').on ('mouseover',function () {
+		var $this = $(this), height = $this.height(),
+			$wrap = $this.find(".middle-wrap");
+		$wrap.animate({'height':0},200);
+		$wrap.clearQueue();
+	});
  $('[data-toggle="tooltip"]').tooltip();
 });
 
