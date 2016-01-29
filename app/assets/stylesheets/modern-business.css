@@ -44,7 +44,7 @@ header.carousel .fill {
     background-size: cover;
 }
 .fill {
-    background:url('slider1.jpg');
+    background:url('/assets/slider1.jpg');
 }
 
 /* 404 Page Styles */
