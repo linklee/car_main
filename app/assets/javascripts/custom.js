@@ -113,7 +113,7 @@ $(".phone").mask("?(999) 999-9999");
   $('[data-toggle="tooltip"]').tooltip();
 
 //trash
-var width = $(window).width();
+var width = $(window).width();	
 if(width > 900) { 
 	var link = $('.ul_right');
 	var offset = link.offset();

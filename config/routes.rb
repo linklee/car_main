@@ -18,6 +18,8 @@ SampleApp::Application.routes.draw do
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
   get :check_car_status, to: 'static_pages#check_lead_car_status', as: 'check_lead_car_status'
+  get :appointment, to: 'static_pages#appointment', as: 'make_appointment'
+  get :send_email, to: 'static_pages#make_appointment', as: 'mail'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

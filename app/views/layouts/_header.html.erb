@@ -7,8 +7,8 @@
     <a href="/contact" class="smoothScroll">Contacts</a>
     <a href="#demos" class="smoothScroll">About us</a>
     <a href="#buy" class="smoothScroll">Services</a>
-    <a href="#appointment" class="smoothScroll">Appointment</a>
-    <a href="#ba" class="smoothScroll">before/after</a>
+    <a href="appointment" class="smoothScroll">Appointment</a>
+    <a href="#ba" class="smoothScroll ba-link">before/after</a>
 
   </div>
 
@@ -77,4 +77,8 @@ margin-top: 20px;" class = "chat_button  btn btn-medium btn-primary">Chat</a>
 </div>
 <% else -%>
 <div style="height:30px"></div>
+<script>
+//hack for going to id from another page
+  $('.ba-link').on('click', function() {document.location.href = "/#ba"; return false;});
+</script>
 <% end -%>

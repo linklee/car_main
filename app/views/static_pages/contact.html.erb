@@ -1,5 +1,45 @@
-<% provide(:title, 'Contact') %>
-<h1>Contact</h1>
-<p>
-  contact page
-</p>
+<% provide(:title, 'Contacts') %>
+<br/>
+<script
+src="http://maps.googleapis.com/maps/api/js">
+</script>
+
+<div class="pure-g center" style="min-height:300px" >
+	<div class="pure-u-1" style="width:500px;margin:0 auto;text-align:left ">
+		<h1 style="display:inline">Contacts</h1>
+		<br/>
+		<br/>
+
+		phone: 818-844-7529<br/>
+		email: edwineyvazian@gmail.com<br/>
+		location: 4557 Fountain Ave.Los Angeles Ca 90029
+		<br/>	<br/>
+		<div id="googleMap" style="width:500px;height:380px;"></div>
+
+	</div>
+</div>
+<script>
+	var myCenter=new google.maps.LatLng(34.0960319,-118.2903576,17);
+
+	function initialize()
+	{
+		var mapProp = {
+			center:myCenter,
+			zoom:14,
+			mapTypeId:google.maps.MapTypeId.ROADMAP,
+			scrollwheel: false
+
+		};
+
+		var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+
+		var marker=new google.maps.Marker({
+			position:myCenter,
+		});
+
+		marker.setMap(map);
+	}
+
+	google.maps.event.addDomListener(window, 'load', initialize);
+</script>

@@ -1,0 +1,11 @@
+<center>
+	<h1>Make an appointment</h1>
+	<%= form_tag mail_path, :method => :get do %>
+	<%= text_field_tag :name, "", class: '', placeholder: 'name' %><br/>
+
+	<%= text_field_tag :phone, "", class: 'phone ', placeholder: 'phone', required: 'true'  %><br/>
+	<%= text_area :text, "", class: ' ', placeholder: 'Provide us details such as time and day'  %>
+	<br/>
+	<%= submit_tag "Submit", class: "btn btn-large btn-primary" %>
+	<%end%>
+</center>

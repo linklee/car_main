@@ -13,7 +13,7 @@ gem 'ffaker'
 gem 'carrierwave', '~> 0.9'
 gem "font-awesome-rails"
 gem 'sprockets-rails'
-
+gem 'rest-client'
 group :development, :test do
   gem 'sqlite3', '1.3.8'
   gem 'rspec-rails', '2.13.1'
