@@ -8,11 +8,8 @@ src="http://maps.googleapis.com/maps/api/js">
 	<div class="pure-u-1" style="width:500px;margin:0 auto;text-align:left ">
 		<h1 style="display:inline">Contacts</h1>
 		<br/>
-		<br/>
-
-		phone: 818-844-7529<br/>
-		email: edwineyvazian@gmail.com<br/>
-		location: 4557 Fountain Ave.Los Angeles Ca 90029
+		<br/>dsfsd
+		<%= raw PagePart.find_by(page_name: 'contacts').text%>
 		<br/>	<br/>
 		<div id="googleMap" style="width:500px;height:380px;"></div>
 

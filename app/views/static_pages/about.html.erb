@@ -1,26 +1,15 @@
-<% provide(:title, 'About Us') %>
-<h1>About Us</h1>
-<p>
-  About page
-</p>
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog  modal-lg">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Estimate using your mobile device</h4>
-      </div>
-      <div class="modal-body">
-      <%=image_tag("slider1.jpg", :class => "whypopupimg") %>
-       
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
+<style>
+  h1,h2,h3, h4,h5,h6
+  {
+    display:inline!important
+  }
+</style>
+<div class="pure-g center" style="min-height:300px" >
+  <div class="pure-u-1" style="width:500px;margin:0 auto;text-align:left;margin-top:20px ">
+    <h1 style="display:inline">About us</h1>
+    <br/>
+    <br/>
+    <%= raw PagePart.find_by(page_name: 'about').text%>
   </div>
 </div>
+

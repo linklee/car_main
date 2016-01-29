@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160127152116) do
+ActiveRecord::Schema.define(version: 20160129181816) do
 
   create_table "bas", force: true do |t|
     t.string   "src"
@@ -35,6 +35,13 @@ ActiveRecord::Schema.define(version: 20160127152116) do
     t.string   "status"
     t.string   "car_model"
     t.string   "coords"
+  end
+
+  create_table "page_parts", force: true do |t|
+    t.string   "page_name"
+    t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

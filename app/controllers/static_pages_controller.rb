@@ -51,5 +51,9 @@ class StaticPagesController < ApplicationController
     redirect_to "/appointment"
 
 end
+def pages
+  @page_parts = PagePart.where(page_name: params[:page])
+
+end
 
 end

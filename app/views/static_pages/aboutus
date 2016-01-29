@@ -1,0 +1,14 @@
+<style>
+	h1,h2,h3, h4,h5,h6
+	{
+		display:inline!important
+	}
+</style>
+<div class="pure-g center" style="min-height:300px" >
+	<div class="pure-u-1" style="width:500px;margin:0 auto;text-align:left;margin-top:20px ">
+		<h1 style="display:inline">Services</h1>
+		<br/>
+		<br/>
+		<%= raw PagePart.find_by(page_name: 'services').text%>
+	</div>
+</div>
