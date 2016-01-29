@@ -43,6 +43,9 @@ header.carousel .fill {
     background-position: center;
     background-size: cover;
 }
+.fill {
+    background:url('slider1.jpg');
+}
 
 /* 404 Page Styles */
 
@@ -281,4 +284,9 @@ margin-left: -90px;
 
 .carousel-indicators{
     margin-top: 10px;z-index: 1000;display: none;
+}
+.phone-background {
+
+    background: url ("slider5.jpg")!important;
+
 }

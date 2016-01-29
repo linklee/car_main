@@ -1,17 +1,22 @@
 $(function(){
 	 //form wizard start
-	 var width = $(window).width();
-	 console.log(width);
-	 if(width <900) {$('.right_nav').addClass('hidden');
-	 if($('.fill').size() != 0){
-	 	$('.fill')[0].style.backgroundSize =" 100% 100%";
-	 	$('.fill')[1].style.backgroundSize =" 100% 100%";
-	 	$('.fill')[1].style.height =" 100%";
-	 	$('.fill')[0].style.height =" 100%";
-	 }
+	//  var width = $(window).width();
+	//  console.log(width);
+	//  if(width <900) {
+	//  //old hack for background on mobiles remove and use @ media
+ //    if($(window).width() <900) {
+ //        $('.right_nav').addClass('hidden');
+ //        if($('.fill').size() != 0){
+ //            //$('.fill')[0].style.backgroundImage = "url('<%=asset_path('slider5.jpg')=%>')";
+ //            //$('.fill')[0].style.backgroundSize =" cover";
+ //            $('.fill')[1].style.backgroundSize =" 100% 100%";
+ //            $('.fill')[1].style.height =" 100%";
+ //            $('.fill')[0].style.height =" 100%";
+ //        }
+ //    }
 	 
-	 if(width <330) { $('.logo-sign').addClass('hidden');}
-	};
+	//  if(width <330) { $('.logo-sign').addClass('hidden');}
+	// };
 	//hide menu
 	// if(location.search != "") {
 	// 	$(".menu_opener").addClass('hidden');
@@ -108,7 +113,7 @@ $(".phone").mask("?(999) 999-9999");
   $('[data-toggle="tooltip"]').tooltip();
 
 //trash
-
+var width = $(window).width();
 if(width > 900) { 
 	var link = $('.ul_right');
 	var offset = link.offset();

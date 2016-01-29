@@ -1,40 +1,63 @@
   <!DOCTYPE html>
-<html>
+  <html>
   <head>
     <title><%= full_title(yield(:title)) %></title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <%= stylesheet_link_tag "application", media: "all",
-                                           "data-turbolinks-track" => true %>
+    "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css">
+    <style>
+      @media (max-width: 900px) {
+        .fill {
+          background:url('<%=asset_path('slider5.jpg')=%>') !important;
+          background-size: cover!important;
+          background-position: top!important;
+        }
+        .right_nav {
+         display: none; 
+       }
+     }
+     @media (max-width: 500px){
+      .fill {
+        background-size: cover!important;
+        background-position: top!important;
+      }
 
-    <%= render 'layouts/shim' %>
-  </head>
+    }
+    @media (max-width: 330px) {
+     .logo-sign {
+      display:none;
+    }
+  }
+</style>
+<%= render 'layouts/shim' %>
+</head>
 
-  <body>
+<body>
 
-    <%= render 'layouts/header' %>
-    <% if current_page?('/') %>
-      <%= render 'layouts/carousel' %>
+  <%= render 'layouts/header' %>
+  <% if current_page?('/') %>
+  <%= render 'layouts/carousel' %>
 
-    <% end %>
+  <% end %>
 
-    <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
-      <% end %>
-      <%= yield %>
-        <% if current_page?('/') %>
+  <% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+  <%= yield %>
+  <% if current_page?('/') %>
   <%= render 'static_pages/whyspopup' %>
   <% end %>
 
-      <%= render 'layouts/footer' %>
+  <%= render 'layouts/footer' %>
 
-   
-          <%= debug(params) if Rails.env.development? %>
 
-  </body>
+  <%= debug(params) if Rails.env.development? %>
+
+</body>
 </html>
