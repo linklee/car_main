@@ -15,8 +15,8 @@
       <h3>contact information</h3>
 
       <%= f.text_field :name, placeholder: 'name', required: 'true' %><br/>
-      <%= f.text_field :phone, class: 'phone', placeholder: 'phone', required: 'true',  %><br/>
-      <%= f.text_field :email, class: 'email', placeholder: 'email', required: 'true',  %>
+      <%= f.text_field :phone, class: 'phone', placeholder: 'phone', required: 'true'  %><br/>
+      <%= f.text_field :email, class: 'email', placeholder: 'email', required: 'true'  %>
     </section>
     <wizard>car details</wizard>
     <section>
@@ -40,7 +40,7 @@
               <%= image_tag("car_types/suvvanwhite.png", :class => "car_type", :alt => "van")%>
               <%= image_tag("car_types/otherwhite.png", :class => "car_type", :alt => "otherwhite")%>
               -!-->
-              <%= f.text_field :car_manufacturer, placeholder: 'manufacturer', required: 'true', %><br/>
+              <%= f.text_field :car_manufacturer, placeholder: 'manufacturer', required: 'true'%><br/>
               <%= f.text_field :car_model, placeholder: 'model', required: 'true'%><br/>
               <%= f.text_field :car_year, placeholder: 'year', required: 'true'%>
 
