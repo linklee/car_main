@@ -21,6 +21,7 @@ $(function(){
 	// if(location.search != "") {
 	// 	$(".menu_opener").addClass('hidden');
 	// }
+
 	var form = $(".new_form"); 
 	form.validate({
 		errorPlacement: function errorPlacement(error, element) { element.before(error); },
@@ -35,10 +36,23 @@ $(function(){
 		enableFinishButton: 1,
 		enablePagination: 1,
 		transitionEffectSpeed: 0,
+
 		onStepChanging: function (event, currentIndex, newIndex)
 		{
+			console.log(currentIndex);
+			console.log(newIndex);
 			form.validate().settings.ignore = ":disabled,:hidden";
-			return form.valid();
+			if(newIndex !== 2) {
+				$('.check-car').addClass('hidden');
+			}
+			else {
+				$('.check-car').removeClass('hidden');
+			}
+			var valid = form.valid();
+			if(!valid) {
+				$('.check-car').addClass('hidden');
+			}
+			return valid;
 		},
 		onFinishing: function (event, currentIndex)
 		{
@@ -57,6 +71,11 @@ $(function(){
 		$this.addClass('active'); // Add the class to the nth element
 		$('.vehicle_type').val($this.attr('title'));
 	});
+
+	if ($('.steps').size() !=0) {
+		$('.new-form-submit').hide()
+	}
+	
 	// $('.car_type').click(function(){
  //    $this = $(this),
 	//     src = $this.attr('src'); 

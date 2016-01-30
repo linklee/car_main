@@ -4,33 +4,62 @@
 <div class="row">
   <div class="span6 offset3">
     <%= form_for(@lead) do |f| %>
-     
-      phone: <%= @lead.phone %>
-      <br/>
-      email: <%= @lead.email %>
-      <br/>
-      car type: <%= @lead.car_type %>
-      <br/>
-      manufacturer: <%= @lead.car_manufacturer%>
-      <br/>
-      car model: <%= @lead.car_model %>
-      <br/>
-      year: <%= @lead.car_year %><br/>
-      
-    
-      
-      <%= image_tag(@lead.photo1, :style=> "display:inline")%>
 
-       <%= image_tag(@lead.photo2, :style=> "display:inline")%>
+    phone: <%= @lead.phone %>
+    <br/>
+    email: <%= @lead.email %>
+    <br/>
+    car type: <%= @lead.car_type %>
+    <br/>
+    manufacturer: <%= @lead.car_manufacturer%>
+    <br/>
+    car model: <%= @lead.car_model %>
+    <br/>
+    year: <%= @lead.car_year %><br/>
 
 
-       <br/>
-       status: <%= select_tag(:status, options_for_select([['0', 0], ['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5], ['6', 6], ['7', 7], ['8', 8]], selected: @lead.status )) %>
-      
 
-      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+    <%= image_tag(@lead.photo1, :style=> "display:inline")%>
+
+    <%= image_tag(@lead.photo2, :style=> "display:inline")%>
+
+
+    <br/>damaged parts:
+    <div class="wrap" style="position:relative;"> 
+       <%= image_tag("car.jpg", :class => "car car-img")%>
+
+
+    </div>
+    <br/>
+    <%= f.text_field :coords, placeholder: 'coords', required: 'true', class: 'coords ', value: @lead.coords%>
+    status: <%= select_tag(:status, options_for_select([['0', 0], ['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5], ['6', 6], ['7', 7], ['8', 8]], selected: @lead.status )) %>
+
+    <br/>
+
+    <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
     <% end %>
 
-   
+
   </div>
 </div>
+<script>
+  $(function(){
+
+
+    $('map').imageMapResize(); 
+    var val =$('.coords').val();
+    val = val.split('##');
+    var width =val.shift();
+    console.log(width);
+    console.log($('.car-img').width());
+    var ratio = $('.car-img').width()/width;
+    for (var i=0; i<val.length;i++){
+      console.log(val[i]);
+      var v = val[i].split('---');
+      $(".wrap").append("<img src='<%=asset_path('check.png')=%>' style= 'color:red;position: absolute;top:"+ (v[1]*ratio-15)  +"px;left: "+ (v[0]*ratio-15)+"px' class='check-img'></img>");
+    }
+
+
+  });
+
+</script>
