@@ -8,33 +8,33 @@
   <%= form_for(@lead,:html => {:class => 'new_form', :onkeypress => "return event.keyCode != 13;"}) do |f| %>
   <div>
 
+   
 
+   <wizard>contact information</wizard>
+   <section>
+    <h3>contact information</h3>
 
-    <wizard>contact information</wizard>
-    <section>
-      <h3>contact information</h3>
+    <%= f.text_field :name, placeholder: 'name', required: 'true' %><br/>
+    <%= f.text_field :phone, class: 'phone', placeholder: 'phone', required: 'true'  %><br/>
+    <%= f.text_field :email, class: 'email', placeholder: 'email', required: 'true'  %>
+  </section>
+  <wizard>car details</wizard>
+  <section>
 
-      <%= f.text_field :name, placeholder: 'name', required: 'true' %><br/>
-      <%= f.text_field :phone, class: 'phone', placeholder: 'phone', required: 'true'  %><br/>
-      <%= f.text_field :email, class: 'email', placeholder: 'email', required: 'true'  %>
-    </section>
-    <wizard>car details</wizard>
-    <section>
+    <h3>car details</h3>
+    <%= f.text_field :car_type, placeholder: 'vehicle type', class: "vehicle_type hidden", required: 'true', value: 'car' %>    
+    <div class="btn-group vehicle_group" role="group">
+      <button title ="Car" type="button" class="btn btn-primary">   
+       <i class="fa fa-car"></i>Car   </button>
+       <button type="button" title ="Truck" class="btn btn-primary">
+        <i class="fa fa-truck"></i>Truck</button>
+        <button type="button" title ="Suv/Van" class="btn btn-primary">
+          <i class="fa fa-bus"></i> Suv/Van</button>
+          <button type="button" title ="Other" class="btn btn-primary">
+           <i class="fa fa-motorcycle"></i> Other</button>
 
-      <h3>car details</h3>
-      <%= f.text_field :car_type, placeholder: 'vehicle type', class: "vehicle_type hidden", required: 'true', value: 'car' %>    
-      <div class="btn-group vehicle_group" role="group">
-        <button title ="Car" type="button" class="btn btn-primary">   
-         <i class="fa fa-car"></i>Car   </button>
-         <button type="button" title ="Truck" class="btn btn-primary">
-          <i class="fa fa-truck"></i>Truck</button>
-          <button type="button" title ="Suv/Van" class="btn btn-primary">
-            <i class="fa fa-bus"></i> Suv/Van</button>
-            <button type="button" title ="Other" class="btn btn-primary">
-             <i class="fa fa-motorcycle"></i> Other</button>
-
-           </div>
-           <br/><br/>
+         </div>
+         <br/><br/>
               <!---<%= image_tag("car_types/carwhite.png", :class => "car_type", :alt => "car")%>
               <%= image_tag("car_types/truckwhite.png", :class => "car_type", :alt => "truck")%>
               <%= image_tag("car_types/suvvanwhite.png", :class => "car_type", :alt => "van")%>
@@ -46,6 +46,7 @@
 
             </section>
             <!-- coords-->  
+
             <wizard>Select damaged areas</wizard>
 
             <section>
@@ -55,7 +56,6 @@
              <%= render 'layouts/coords' %>
 
            </section>
-
            <!--end coords!-->
            <wizard>Take the first photo from straight on</wizard>
            <section>
@@ -87,11 +87,18 @@
       <script>
         $(document).ready(function() {
          // / $('map').imageMapResize(); 
-  //          $('.car').width('403px');
-
-  $(".car").click(function(e) {
-
-    var offset = $('.car').offset();
+  //select 400px or 320px picture;
+  var width = $(window).width(), 
+  car;
+  if(width < 400) {
+    car = $('.car320');
+  }
+  else {
+    car =$('.car400')
+  }    
+  $("map").click(function(e) {
+    console.log(car); 
+    var offset = car.offset();
     var relativeX = (e.pageX - offset.left);
     var relativeY = (e.pageY - offset.top);
   //alert(relativeX+':'+relativeY);
@@ -100,9 +107,8 @@
   $("body").append("<img class='check-car' src='<%=asset_path('check.png')=%> ' style= 'color:red;position: absolute;top:"+ (e.pageY-15)  +"px;left: "+ (e.pageX-15)+"px' class=' '></img>");
   var val =$('.coords').val();
   if (val == "") {
-    val = $('.car').width();
+    val = car.width();
   }  
-  console.log(1231231);
   val+=  '##'+ relativeX+  '---'  + relativeY;
   $('.coords').val(val);
 });
