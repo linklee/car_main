@@ -8,7 +8,6 @@
   <%= form_for(@lead,:html => {:class => 'new_form', :onkeypress => "return event.keyCode != 13;"}) do |f| %>
   <div>
 
-   
 
    <wizard>contact information</wizard>
    <section>
@@ -47,6 +46,7 @@
             </section>
             <!-- coords-->  
 
+
             <wizard>Select damaged areas</wizard>
 
             <section>
@@ -54,6 +54,12 @@
              <%= f.text_field :coords, placeholder: 'coords', required: 'true', class: 'coords '%>
 
              <%= render 'layouts/coords' %>
+
+             <div style="text-align:left;width:200px;margin:0 auto;padding-left:120px">
+               <input style="display:inline;margin-top:-2px" type="radio" name="seat" value="Driver's seat" checked ="true"/> Driver's seat<br>
+               <input style="display:inline;margin-top:-2px" type="radio" name="seat" value="Passenger's seat"/> Passenger's seat
+               <br><br>
+             </div>
 
            </section>
            <!--end coords!-->
@@ -88,23 +94,24 @@
         $(document).ready(function() {
          // / $('map').imageMapResize(); 
   //select 400px or 320px picture;
-  var width = $(window).width(), 
-  car;
+  var width = $(window).width();
   if(width < 400) {
     car = $('.car320');
   }
   else {
     car =$('.car400')
   }    
+
+
   $("map").click(function(e) {
-    console.log(car); 
     var offset = car.offset();
     var relativeX = (e.pageX - offset.left);
     var relativeY = (e.pageY - offset.top);
   //alert(relativeX+':'+relativeY);
-  console.log(relativeX+':'+relativeY);
-  //$(".position").val("afaf");    
-  $("body").append("<img class='check-car' src='<%=asset_path('check.png')=%> ' style= 'color:red;position: absolute;top:"+ (e.pageY-15)  +"px;left: "+ (e.pageX-15)+"px' class=' '></img>");
+  //console.log(relativeX+':'+relativeY);
+  //$(".position").val("afaf");   
+
+  $("body").append("<img  class='check-car' src='<%=asset_path('check.png')=%> ' style= 'cursor:pointer;color:red;position: absolute;top:"+ (e.pageY-15)  +"px;left: "+ (e.pageX-15)+"px' class=' '></img>");
   var val =$('.coords').val();
   if (val == "") {
     val = car.width();
@@ -112,6 +119,28 @@
   val+=  '##'+ relativeX+  '---'  + relativeY;
   $('.coords').val(val);
 });
+  $(document.body).on("click", ".check-car", function(){
+    $(this).remove();
+  })
+
 });
-      </script>
-      
+// $('.check-car').on('click', function(){
+//   alert(1);
+//   $(this).delete();
+// })
+
+function buildCoords(){
+  var seat = $("input[name=seat]:checked").val()
+  var val = seat + '##' +car.width();
+  var offset = car.offset();
+
+  $('.check-car').each(function(){
+    $this = $(this);
+    var relativeX = (+$this.css('left').replace('px','') +15) - offset.left;
+    var relativeY = (+$this.css('top').replace('px','') +15) - offset.top;
+    val+=  '##'+ relativeX+  '---'  + relativeY;
+    console.log(val);
+    $('.coords').val(val);
+  })
+}
+</script>

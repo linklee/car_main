@@ -48,9 +48,14 @@ $(function(){
 			else {
 				$('.check-car').removeClass('hidden');
 			}
+
 			var valid = form.valid();
 			if(!valid) {
 				$('.check-car').addClass('hidden');
+			}
+			//build .coords if 2
+			if(currentIndex === 2) {
+				buildCoords();
 			}
 			return valid;
 		},

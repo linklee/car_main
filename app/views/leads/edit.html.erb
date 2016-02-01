@@ -28,7 +28,7 @@
     <div class="wrap" style="position:relative;"> 
        <%= image_tag("car.jpg", :style => "width:400px", :class => "car car-img")%>
 
-
+      <p class="seat"> </p>
     </div>
     <br/>
     <%= f.text_field :coords, placeholder: 'coords', required: 'true', class: 'coords ', value: @lead.coords%>
@@ -44,11 +44,9 @@
 </div>
 <script>
   $(function(){
-
-
-    $('map').imageMapResize(); 
     var val =$('.coords').val();
     val = val.split('##');
+    $('.seat').text(val.shift());
     var width =val.shift();
     console.log(width);
     console.log($('.car-img').width());
