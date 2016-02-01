@@ -72,4 +72,7 @@ class PagePartsController < ApplicationController
     def page_part_params
       params.require(:page_part).permit(:page_name, :text)
     end
+     def admin_user
+      redirect_to(root_url) unless current_user.admin?
+    end
   end

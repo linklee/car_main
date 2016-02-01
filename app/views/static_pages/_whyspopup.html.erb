@@ -22,7 +22,7 @@
       </div>
       <div class="modal-body">
         <%=image_tag(@whys[i][1] , :class => "whypopupimg") %>
-
+       <div style="text-align:left;padding-top:5px">  <%= raw @whys_descr[i]%> </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

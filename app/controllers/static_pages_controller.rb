@@ -20,7 +20,7 @@ class StaticPagesController < ApplicationController
   end
   def home
    @whys= [["Estimate using your mobile device", "slider1.jpg"], 
-   ["Repair bumper in your place", "portfolio/bumper.jpg"],
+   ["Repair bumper in your place", "portfolio/bumper.jpg",""],
    ['Towing', "portfolio/towing2.jpg"], 
 
    ['Paintless 
@@ -37,8 +37,22 @@ class StaticPagesController < ApplicationController
    #9
    ['Uber and Lyft drivers', 'portfolio/uber.jpg']]
 
- end
- def make_appointment
+   @whys_descr = [
+    PagePart.find_by(page_name: 'estimate').text,
+    PagePart.find_by(page_name: 'bumber repair').text,
+    PagePart.find_by(page_name: 'towing').text,
+    PagePart.find_by(page_name: 'dent repair').text,
+    PagePart.find_by(page_name: 'auto glass repair').text,
+    #PagePart.find_by(page_name: 'insurance').text,
+    #PagePart.find_by(page_name: 'light').text,
+    "","",
+    PagePart.find_by(page_name: 'rent').text,
+    PagePart.find_by(page_name: 'uber').text,
+
+  ]
+
+end
+def make_appointment
 
   flash[:success] = "Request successfully created!" 
 
@@ -48,7 +62,7 @@ class StaticPagesController < ApplicationController
   :to => "jonsstark <nevernight721@gmail.com>",
   :subject => "Customer wants to make an appointment",
   :text => "name: " + params[:name].to_s+ " --- phone: " + params[:phone].to_s + "---- details" + params[:text].to_s  
-    redirect_to "/appointment"
+  redirect_to "/appointment"
 
 end
 def pages
