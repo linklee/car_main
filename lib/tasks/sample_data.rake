@@ -47,7 +47,6 @@ good to go.
 <b>8. On-Time Delivery</b> - We strive to meet our deadlines, sometimes they are ready later or quicker than expected. 
 <br><br>• Pick up your vehicle on time - And return your rental car! 
 <br><br>• Get back to the rhythm of your life - We hope that this process was simple and efficient for you. We hope to see you again in the future, but not anytime too soon!")
-    exit
      #auto glass repair
      PagePart.create!(  page_name: "auto glass repair",
       text: "On top of all the services that we offer, we also can fix your auto glass. Maybe you didn’t get in a complete wreck and something hit your windshield. We can fix that for you and come to your house, or workplace, to fix it right there on the spot for you. All of our services are pain and hassle free. Just send us the picture and we will provide you with the information needed to move forward.")
