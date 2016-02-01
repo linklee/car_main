@@ -6,13 +6,16 @@
     <a  class="smoothScroll">----</a>
     <a href="#" style= "position:absolute;" class="fa fa-times menu_closer"></a>
     <a href="/" class="smoothScroll">Home</a>
-    
+
     <a href="/contact" class="smoothScroll">Contacts</a>
     <a href="/about" class="smoothScroll">About us</a>
     <a href="/services" class="smoothScroll">Services</a>
     <a href="appointment" class="smoothScroll">Appointment</a>
     <a href="#ba" class="smoothScroll ba-link">before/after</a>
-
+    <%= part =PagePart.find_by(page_name: 'links')
+      if part
+        raw part.text
+        end%>  
   </div>
 
   <!-- Menu button -->
@@ -44,6 +47,7 @@
         </li>
 
         <% if signed_in? && current_user.admin? %>
+        <li><%= link_to "Page parts", '/page_parts' %></li>
         <li><%= link_to "Leads", leads_path %></li>
         <li><%= link_to "Before/after", bas_path %></li>
 
