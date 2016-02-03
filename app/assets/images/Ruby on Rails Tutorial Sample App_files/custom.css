@@ -4947,15 +4947,17 @@ footer {
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #999; }
+  
   footer a {
     color: #555; }
     footer a:hover {
       color: #222; }
   footer small {
     float: left; }
-  footer ul {
-    float: right;
+  footer1 ul {
+    float: none;
     list-style: none; }
+
     footer ul li {
       float: left;
       margin-left: 10px; }
