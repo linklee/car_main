@@ -164,7 +164,7 @@ if(width > 900) {
 	var link = $('.ul_right');
 	var offset = link.offset();
 
-	var left = offset.left + 20;
+	var left = offset.left + 80;
 	var right = left + link.outerWidth();
 	$('.chat_button').css('margin-left',left);
 }
