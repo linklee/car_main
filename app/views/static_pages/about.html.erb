@@ -1,15 +1,25 @@
+<center>
+  <div class="pure-g " style="min-height:300px" >
+    <div class="pure-u-1" style="width:500px;margin:0 auto;text-align:left;margin-top:20px ">
+      <h1 style="">About us</h1>
+      <br/>
+      <br/>
+      <%= raw PagePart.find_by(page_name: 'about').text%>
+    </div>
+  </div>
+</center>
+
 <style>
-  h1,h2,h3, h4,h5,h6
-  {
-    display:inline!important
+  @media (min-width: 900px) {
+
+    #theMenu {
+      display: block!important;
+    }
+    .footer{
+      padding-left: 264px;
+    }
+    center {
+      min-height: 450px;padding-left: 150px;
+    }
   }
 </style>
-<div class="pure-g center" style="min-height:300px" >
-  <div class="pure-u-1" style="width:500px;margin:0 auto;text-align:left;margin-top:20px ">
-    <h1 style="display:inline">About us</h1>
-    <br/>
-    <br/>
-    <%= raw PagePart.find_by(page_name: 'about').text%>
-  </div>
-</div>
-

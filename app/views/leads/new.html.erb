@@ -9,15 +9,17 @@
   <div>
 
 
-   <wizard>contact information</wizard>
+   <wizard>Step 1</wizard>
    <section>
     <h3>contact information</h3>
 
     <%= f.text_field :name, placeholder: 'name', required: 'true' %><br/>
     <%= f.text_field :phone, class: 'phone', placeholder: 'phone', required: 'true'  %><br/>
-    <%= f.text_field :email, class: 'email', placeholder: 'email', required: 'true'  %>
+    <%= f.text_field :email, class: 'email', placeholder: 'email', required: 'true'  %><br>
+    
+
   </section>
-  <wizard>car details</wizard>
+  <wizard>Step 2</wizard>
   <section>
 
     <h3>car details</h3>
@@ -41,13 +43,18 @@
               -!-->
               <%= f.text_field :car_manufacturer, placeholder: 'manufacturer', required: 'true'%><br/>
               <%= f.text_field :car_model, placeholder: 'model', required: 'true'%><br/>
-              <%= f.text_field :car_year, placeholder: 'year', required: 'true'%>
+              <%= f.text_field :car_year, placeholder: 'year', required: 'true'%><br>
+              <%= f.text_field :vin, placeholder: "vehicle vin number" %>
+              <i title ="The VIN can be found by looking at the dashboard on the driver's side of the vehicle. The easiest way to view it is to stand outside the vehicle on the driver's side and look at the corner of the dashboard where it meets the windshield. If the VIN cannot be found there, open the driver's side door and look at the door post (where the door latches when it is closed). It is likely that the VIN will also be displayed in this location." 
+              class="fa fa-question-circle tooltip-mark " data-toggle="tooltip"  data-placement="right"
+              style="position: absolute; 
+              margin: 8px;cursor:pointer"></i> 
 
             </section>
             <!-- coords-->  
 
 
-            <wizard>Select damaged areas</wizard>
+            <wizard>Step 3</wizard>
 
             <section>
              <h3>Select damaged areas</h3>  
@@ -63,7 +70,7 @@
 
            </section>
            <!--end coords!-->
-           <wizard>Take the first photo from straight on</wizard>
+           <wizard>Step 4</wizard>
            <section>
              <h3>Take the first photo from straight on</h3>
              <%= image_tag("photo1.jpg", :class => "car_photo")%>
@@ -73,7 +80,7 @@
              </center>
              <br/>
            </section>
-           <wizard>Now take a photo from a side angle</wizard>
+           <wizard>Step 5</wizard>
            <section>
             <h3>Now take a photo from a side angle</h3>
             <%= image_tag("photo2.jpg", :class => "car_photo")%>
@@ -122,7 +129,8 @@
   $(document.body).on("click", ".check-car", function(){
     $(this).remove();
   })
-
+  $('.steps > ul[role="tablist"] > li > a').addClass('pure-button ');
+   $('.steps > ul[role="tablist"] > li > a').addClass('xxx');
 });
 // $('.check-car').on('click', function(){
 //   alert(1);

@@ -45,6 +45,9 @@
       display:none;
     }
   }
+  @media (min-width:900px) {
+    .logo-sign {margin-left: 250px!important;}
+  }
 </style>
 <%= render 'layouts/shim' %>
 </head>
@@ -54,7 +57,7 @@
   <%= render 'layouts/header' %>
 
 
-    <% if current_page?('/') %>
+  <% if current_page?('/') %>
   <%= render 'layouts/carousel' %>
 
   <% flash.each do |key, value| %>
@@ -70,14 +73,14 @@
 
 
   <%= debug(params) if Rails.env.development? %>
-<!— BEGIN JIVOSITE CODE {literal} —>
-<script type='text/javascript'>
-(function(){ var widget_id = 'aVxeNYDfxN';
-var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);})();</script>
-<!— {/literal} END JIVOSITE CODE —>
-  
+  <!— BEGIN JIVOSITE CODE {literal} —>
+  <script type='text/javascript'>
+    (function(){ var widget_id = 'aVxeNYDfxN';
+      var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);})();</script>
+      <!— {/literal} END JIVOSITE CODE —>
+      
 
-  
+      
 
-</body>
-</html>
+    </body>
+    </html>

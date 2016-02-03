@@ -14,7 +14,7 @@ $(function(){
  //            $('.fill')[0].style.height =" 100%";
  //        }
  //    }
-	 
+ 
 	//  if(width <330) { $('.logo-sign').addClass('hidden');}
 	// };
 	//hide menu
@@ -36,32 +36,44 @@ $(function(){
 		enableFinishButton: 1,
 		enablePagination: 1,
 		transitionEffectSpeed: 0,
-
+		labels: {
+			current: "",
+			loading: "Loading ..."
+		},
 		onStepChanging: function (event, currentIndex, newIndex)
 		{
 			console.log(currentIndex);
 			console.log(newIndex);
-			form.validate().settings.ignore = ":disabled,:hidden";
 			if(newIndex !== 2) {
 				$('.check-car').addClass('hidden');
 			}
 			else {
 				$('.check-car').removeClass('hidden');
 			}
+			 // Allways allow step back to the previous step even if the current step is not valid!
+			 if (currentIndex > newIndex)
+			 {
+			 	return true;
+			 }
 
-			var valid = form.valid();
-			if(!valid) {
-				$('.check-car').addClass('hidden');
-			}
+			 form.validate().settings.ignore = ":disabled,:hidden";
+
+
+			 var valid = form.valid();
+			 if(!valid) {
+			 	$('.check-car').addClass('hidden');
+			 }
 			//build .coords if 2
 			if(currentIndex === 2) {
 				buildCoords();
 			}
+			
 			return valid;
 		},
 		onFinishing: function (event, currentIndex)
 		{
 			form.validate().settings.ignore = ":disabled";
+
 			return form.valid();
 		},
 		onFinished: function (event, currentIndex)
@@ -69,6 +81,12 @@ $(function(){
 			$('.email_submit').click();
 		}
 	});
+	//not validate when we click on prev link
+	var prev = $("a[href='#next']");
+	$(document.body).on("click", "a[href='#previous']", function(){
+		window.notValidate = 1;
+		console.log("prev button clicked");
+	})
 	$('.actions>ul>li>a').addClass('btn btn-primary');
 	$('.vehicle_group>button').click(function(){
 		var $this = $(this);
@@ -107,6 +125,10 @@ $(".phone").mask("?(999) 999-9999");
   	/*$('body').toggleClass('body-push-toleft');*/
   	$('#theMenu').toggleClass('hidden');
   });
+  $('#theMenu').on('mouseleave', function(){$('#theMenu').toggleClass('hidden');
+  	$('#theMenu').clearQueue();
+  });
+
   $('.menu_opener').on('click', function(){
   	$('#theMenu').toggleClass('hidden');
 
@@ -146,6 +168,7 @@ if(width > 900) {
 	var right = left + link.outerWidth();
 	$('.chat_button').css('margin-left',left);
 }
+
 
 });
 

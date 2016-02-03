@@ -3,18 +3,19 @@
 <script
 src="https://maps.googleapis.com/maps/api/js">
 </script>
+<center>
+	<div class="pure-g " style="min-height:300px" >
+		<div class="pure-u-1" style="width:500px;margin:0 auto;text-align:left ">
+			<h1 style="display:inline">Contacts</h1>
+			<br/>
+			<br/>dsfsd
+			<%= raw PagePart.find_by(page_name: 'contacts').text%>
+			<br/>	<br/>
+			<div id="googleMap" style="width:500px;height:380px;"></div>
 
-<div class="pure-g center" style="min-height:300px" >
-	<div class="pure-u-1" style="width:500px;margin:0 auto;text-align:left ">
-		<h1 style="display:inline">Contacts</h1>
-		<br/>
-		<br/>dsfsd
-		<%= raw PagePart.find_by(page_name: 'contacts').text%>
-		<br/>	<br/>
-		<div id="googleMap" style="width:500px;height:380px;"></div>
-
+		</div>
 	</div>
-</div>
+</center>
 <script>
 	var myCenter=new google.maps.LatLng(34.0960319,-118.2903576,17);
 
@@ -40,3 +41,17 @@ src="https://maps.googleapis.com/maps/api/js">
 
 	google.maps.event.addDomListener(window, 'load', initialize);
 </script>
+<style>
+	@media (min-width: 900px) {
+
+		#theMenu {
+			display: block!important;
+		}
+		.footer{
+			padding-left: 264px;
+		}
+		center {
+			min-height: 450px;padding-left: 150px;
+		}
+	}
+</style>

@@ -26,8 +26,8 @@ class LeadsController < ApplicationController
     @lead.status = '0';
     if @lead.save
       #sign_in @lead
-	  flash[:success] = "Request successfully created!"
-      redirect_to "/"
+	  flash[:success] = "Request successfully created! Thank you. We will contact you as soon as possible to give you our estimation."
+      redirect_to "/thanks"
     else
       render 'new'
     end
@@ -53,7 +53,7 @@ class LeadsController < ApplicationController
 
     def lead_params
       params.require(:lead).permit(:name, :email, :phone, :car_type,
-      :car_year, :car_manufacturer, :car_model, :photo1, :photo2, :coords )
+      :car_year, :car_manufacturer, :car_model, :photo1, :photo2, :coords, :vin )
     end
 
     # Before filters

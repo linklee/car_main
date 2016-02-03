@@ -24,6 +24,7 @@ SampleApp::Application.routes.draw do
   get :send_email, to: 'static_pages#make_appointment', as: 'mail'
   get :pages, to: 'static_pages#pages', as: 'pages'
   match '/services',  to: 'static_pages#services',            via: 'get'
+  match '/thanks',  to: 'static_pages#thanks',            via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

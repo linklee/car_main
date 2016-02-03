@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160129181816) do
+ActiveRecord::Schema.define(version: 20160203140532) do
 
   create_table "bas", force: true do |t|
     t.string   "src"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20160129181816) do
     t.string   "status"
     t.string   "car_model"
     t.string   "coords"
+    t.string   "vin"
   end
 
   create_table "page_parts", force: true do |t|
