@@ -32,7 +32,7 @@ class LeadsController < ApplicationController
       :from => "Fast Autobody Center <fbc@sandbox43f2b94d5491492fb7be34200bc81352.mailgun.org>",
       :to => @lead.email,
       :subject => "Request successfully created!",
-      :text => "Thank you for using our service We will contact you as soon as possible to give you our estimation. Your ticket number is "  + @lead.ticket.to_s
+      :text => "Thank you for using our service. We will contact you as soon as possible to give you our estimation. Your ticket number is "  + @lead.ticket.to_s
 
       flash[:success] = "Request successfully created! 
       Thank you. We will contact you as soon as possible to give you our estimation.

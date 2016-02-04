@@ -10,7 +10,6 @@ Article.create!(header: "holiday driving tips", day: "31", month: "Jan'16", p:
   "some text texttextsdfkldskl lkdfsklfkld sfkldjsm,f jkdsk text dsfkjsdjkfkjdsjkfdsjk some text texttextsdfkldskl lkdfsklfkld sfkldjsm,f jkdsk text dsfkjsdjkfkjdsjkfdsjk dsfkjsdjkfkjdsjkfdsjk ...",
   link: "http://blog.com/posts/5")
 end
-exit
 
     #auto glass repair
      PagePart.create!(  page_name: "services",
