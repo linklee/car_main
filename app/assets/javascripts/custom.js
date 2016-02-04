@@ -179,6 +179,7 @@ function validateEmail(email) {
 function show_modal(i){
 	i--;
 	var $why =$("#why" + i);
+	$why.removeClass('hidden');
 	$why.css('z-index',9999);
 	$why.modal();
 };

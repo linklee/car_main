@@ -1,0 +1,27 @@
+	<h2 class="like-header">Blog news </h2>
+
+	<div class="pure-g   ">
+		<center>
+
+			<%=  Article.find_each do |a| %>
+
+<!-- 			=  Article .all.each d o |a| 
+ -->
+			<div class="pure-u-1 pure-u-md-1-5 blog-d">
+				<img class="class="img-responsive"" src = "https://www.carwise.com/blog/wp-content/uploads/2015/11/Holiday-Driving1-770x389.jpg?resolution=358,1"/>
+
+				<div class="blog-date pull-right"><span class="day"><%= a.day %></span>
+					<span class="month"><%= a.month %></span></div>
+
+					<h4 class="blog-header-h3">			
+					<a target="_blank" class="blog-a" href="<%= a.link %>">
+						<%= a.header %>
+					</a></h4>
+
+					<p class="blog-p"><%= a.p %> </p>
+					<a target="_blank" href="<%= a.link %>" class=" blog-a read-more">Read more... </a>
+				</div>
+				<% end %>  
+
+			</center>
+		</div>

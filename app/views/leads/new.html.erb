@@ -16,9 +16,15 @@
     <%= f.text_field :name, placeholder: 'name', required: 'true' %><br/>
     <%= f.text_field :phone, class: 'phone', placeholder: 'phone', required: 'true'  %><br/>
     <%= f.text_field :email, class: 'email', placeholder: 'email', required: 'true'  %><br>
-    
+    <center>
+      <input style= "display: inline;
+      margin-top: -2px;" type="checkbox" name="terms" value=""  required='true'> <span>I agree to <a href="/terms and conditions.docx">Terms and conditions</a></span><br>
+    </center><br>
+
 
   </section>
+
+  <!-- car details!-->
   <wizard>Step 2</wizard>
   <section>
 
@@ -73,15 +79,28 @@
            <wizard>Step 4</wizard>
            <section>
              <h3>Take the first photo from straight on</h3>
-             <%= image_tag("photo1.jpg", :class => "car_photo")%>
-             <br/>
              <center>
+               <%= image_tag("photo1.jpg", :class => "car_photo")%>
+               <br/>
                <%= f.file_field :photo1, required: 'true'  %>
              </center>
              <br/>
-           </section>
-           <wizard>Step 5</wizard>
-           <section>
+             <center>
+              <div style="width:250px;margin:0 auto;">
+                Has an insurance claim been filled?<br>
+                <input style="display:inline;margin-top:-2px;" type="radio" name="insurance" value="yes" onclick ="$('.i-hidden').val('yes')" /> yes
+                <input style="display:inline;margin-top:-2px" type="radio" name="insurance" value="no" checked ="true" onclick ="$('.i-hidden').val('no')"/> no
+                <input style="display:inline;margin-top:-2px" type="radio" name="insurance" value="not sure" onclick ="$('.i-hidden').val('not sure')"/> not sure<br/><br/>
+                <%= f.text_field :insurance, placeholder: 'insurance', required: 'true', class: 'i-hidden hidden', value:'no' %><br/>
+
+                <%= f.text_area :i_comment, placeholder: 'Additional comments'%><br/><br>
+              </div>
+            </center>
+          </section>
+
+          <!--step 5!-->
+          <wizard>Step 5</wizard>
+          <section>
             <h3>Now take a photo from a side angle</h3>
             <%= image_tag("photo2.jpg", :class => "car_photo")%>
             <center>
@@ -130,7 +149,7 @@
     $(this).remove();
   })
   $('.steps > ul[role="tablist"] > li > a').addClass('pure-button ');
-   $('.steps > ul[role="tablist"] > li > a').addClass('xxx');
+  $('.steps > ul[role="tablist"] > li > a').addClass('xxx');
 });
 // $('.check-car').on('click', function(){
 //   alert(1);

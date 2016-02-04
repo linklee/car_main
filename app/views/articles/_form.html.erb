@@ -1,0 +1,49 @@
+<center>
+<%= form_for(@article) do |f| %>
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+      <ul>
+      <% @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :header %><br>
+    <%= f.text_field :header %>
+  </div>
+  <div class="field">
+    <%= f.label :day %><br>
+    <%= f.text_field :day %>
+  </div>
+  <div class="field">
+    <%= f.label :month %><br>
+    <%= f.text_field :month %>
+  </div>
+  <div class="field">
+    <%= f.label :link %><br>
+    <%= f.text_area :link %>
+  </div>
+  <div class="field">
+    <%= f.label "text" %><br>
+    <%= f.text_area :p %>
+  </div>
+<br/>
+  <div class="actions" onclick ="x=$('#article_p').val(); x=x.substring(0,193); x+='...';$('#article_p').val(x)">
+    <%= f.submit %>
+  </div>
+<% end %>
+</center>
+<script type="text/javascript">
+//   $( "form" ).validate({
+//   rules: {
+//     'article[p]': {
+//       maxlength: 193
+//     }
+//   }
+// });
+</script>

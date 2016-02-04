@@ -1,0 +1,64 @@
+   @media (max-width: 900px) {
+        .green-button{
+          display: none!important;
+        }
+        .chat_button{
+          margin-top: 20px!important;
+        }
+        #myCarousel{
+          height:800px!important;
+        }
+
+        .carousel-h1{
+          display: block!important;
+          margin-bottom: 5px;
+        }
+        .carousel-h1-link {
+          display: inline-block!important;
+        }
+        .fill {
+          background:url('slider5.jpg') !important;
+          background-size: cover!important;
+          background-position: top!important;
+        }
+        .right_nav {
+         display: none; 
+       }
+     }
+     @media (max-width: 500px){
+      .fill {
+        background-size: cover!important;
+        background-position: top!important;
+      }
+      .modal-body {
+        width:320px!important;
+        margin:0 auto!important;
+      }
+    }
+    @media (max-width: 399px){
+      .car400 {
+        display: none
+      }
+      .car320 {
+        display: block!important;
+      }
+    }
+    @media (max-width: 330px) {
+     .logo-sign {
+      display:none;
+    }
+  }
+  @media (min-width:900px) {
+    .logo-sign {margin-left: 250px!important;}
+    .fill {
+      background-position: center bottom !important;
+      padding-top: 68px !important;
+
+    }
+    .carousel-phone {
+      margin-top: 25% !important;
+    }
+    #myCarousel {
+      min-height: 600px!important;
+    }
+  }

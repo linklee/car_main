@@ -2,10 +2,10 @@ class LeadsController < ApplicationController
   #before_action :signed_in_user, only: [:index, :edit, :update]
   #before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: [:index, :edit, :update, :destroy]
- 
+
 
   def index
-        @leads = Lead.paginate(page: params[:page])
+    @leads = Lead.paginate(page: params[:page])
   end
 
   def destroy
@@ -24,9 +24,19 @@ class LeadsController < ApplicationController
   def create
     @lead = Lead.new(lead_params)
     @lead.status = '0';
+    @lead.ticket = rand(1000..10000);
     if @lead.save
       #sign_in @lead
-	  flash[:success] = "Request successfully created! Thank you. We will contact you as soon as possible to give you our estimation."
+      RestClient.post "https://api:key-f99e5c3db48a9ad293da99a2b7e9da0b"\
+      "@api.mailgun.net/v3/sandbox43f2b94d5491492fb7be34200bc81352.mailgun.org/messages",
+      :from => "Fast Autobody Center <fbc@sandbox43f2b94d5491492fb7be34200bc81352.mailgun.org>",
+      :to => @lead.email,
+      :subject => "Request successfully created!",
+      :text => "Thank you for using our service We will contact you as soon as possible to give you our estimation. Your ticket number is "  + @lead.ticket.to_s
+
+      flash[:success] = "Request successfully created! 
+      Thank you. We will contact you as soon as possible to give you our estimation.
+      Your ticket number is  " + @lead.ticket.to_s
       redirect_to "/thanks"
     else
       render 'new'
@@ -51,10 +61,11 @@ class LeadsController < ApplicationController
 
   private
 
-    def lead_params
-      params.require(:lead).permit(:name, :email, :phone, :car_type,
-      :car_year, :car_manufacturer, :car_model, :photo1, :photo2, :coords, :vin )
-    end
+  def lead_params
+    params.require(:lead).permit(:name, :email, :phone, :car_type,
+      :car_year, :car_manufacturer, :car_model, :photo1, :photo2, :coords, 
+      :vin, :insurance, :i_comment )
+  end
 
     # Before filters
 
@@ -72,5 +83,5 @@ class LeadsController < ApplicationController
     def admin_user
       redirect_to(root_url) unless current_user.admin?
     end
-  
-end
+
+  end

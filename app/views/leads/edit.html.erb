@@ -18,7 +18,11 @@
     year: <%= @lead.car_year %><br/>
     vin: <%= @lead.vin %>
     <br/>
-
+    has insurance been filled: <%= @lead.insurance %>    <br/>
+    insurance comment: <%= @lead.i_comment %>
+    <br/>
+    ticket  nunber: <%= @lead.ticket %>
+    <br/>
 
     <%= image_tag(@lead.photo1, :style=> "display:inline")%>
 
@@ -27,21 +31,21 @@
 
     <br/>damaged parts:
     <div class="wrap" style="position:relative;"> 
-       <%= image_tag("car.jpg", :style => "width:400px", :class => "car car-img")%>
+     <%= image_tag("car.jpg", :style => "width:400px", :class => "car car-img")%>
 
-      <p class="seat"> </p>
-    </div>
-    <br/>
-    <%= f.text_field :coords, placeholder: 'coords', required: 'true', class: 'coords ', value: @lead.coords%>
-    status: <%= select_tag(:status, options_for_select([['0', 0], ['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5], ['6', 6], ['7', 7], ['8', 8]], selected: @lead.status )) %>
+     <p class="seat"> </p>
+   </div>
+   <br/>
+   <%= f.text_field :coords, placeholder: 'coords', required: 'true', class: 'coords ', value: @lead.coords%>
+   status: <%= select_tag(:status, options_for_select([['0', 0], ['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5], ['6', 6], ['7', 7], ['8', 8]], selected: @lead.status )) %>
 
-    <br/>
+   <br/>
 
-    <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
-    <% end %>
+   <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+   <% end %>
 
 
-  </div>
+ </div>
 </div>
 <script>
   $(function(){

@@ -16,6 +16,16 @@ class StaticPagesController < ApplicationController
 
   def check_lead_car_status
   	@lead = Lead.find_by(phone: params[:phone])
+    if @lead
+      @phone = @lead.phone
+    end
+    #<%-@leads.each do |lead| -%>   @leads = Lead.where(phone: params[:phone])
+  end
+  def check_ticket_car_status
+    @lead = Lead.find_by(phone: params[:phone])
+    if @lead.ticket !=  params[:ticket]
+      @lead = nil
+    end
     #<%-@leads.each do |lead| -%>   @leads = Lead.where(phone: params[:phone])
   end
   def home
@@ -35,19 +45,23 @@ class StaticPagesController < ApplicationController
    #8
    ['Rent a car', 'portfolio/rent.jpg'],
    #9
-   ['Uber and Lyft drivers', 'portfolio/uber.jpg']]
+   ['Uber and Lyft drivers', 'portfolio/uber.jpg'],
+   #10
+   ['Car repair process', 'stat/services2.png'], 
+ ]
 
-   @whys_descr = [
-    PagePart.find_by(page_name: 'estimate').text,
-    PagePart.find_by(page_name: 'bumber repair').text,
-    PagePart.find_by(page_name: 'towing').text,
-    PagePart.find_by(page_name: 'dent repair').text,
-    PagePart.find_by(page_name: 'auto glass repair').text,
+ @whys_descr = [
+  PagePart.find_by(page_name: 'estimate').text,
+  PagePart.find_by(page_name: 'bumber repair').text,
+  PagePart.find_by(page_name: 'towing').text,
+  PagePart.find_by(page_name: 'dent repair').text,
+  PagePart.find_by(page_name: 'auto glass repair').text,
     #PagePart.find_by(page_name: 'insurance').text,
     #PagePart.find_by(page_name: 'light').text,
     "","",
     PagePart.find_by(page_name: 'rent').text,
     PagePart.find_by(page_name: 'uber').text,
+    PagePart.find_by(page_name: 'services').text,
 
   ]
 
@@ -62,7 +76,7 @@ def make_appointment
   :to => "jonsstark <nevernight721@gmail.com>",
   :subject => "Customer wants to make an appointment",
   :text => "name: " + params[:name].to_s+ " --- phone: " + params[:phone].to_s + "---- details" + params[:text].to_s  
-  redirect_to "/appointment"
+  redirect_to "/thanks"
 
 end
 def pages

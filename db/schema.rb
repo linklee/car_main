@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160203140532) do
+ActiveRecord::Schema.define(version: 20160204170223) do
+
+  create_table "articles", force: true do |t|
+    t.string   "header"
+    t.string   "day"
+    t.string   "month"
+    t.text     "link"
+    t.string   "p"
+    t.string   "string"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "bas", force: true do |t|
     t.string   "src"
@@ -36,6 +47,9 @@ ActiveRecord::Schema.define(version: 20160203140532) do
     t.string   "car_model"
     t.string   "coords"
     t.string   "vin"
+    t.string   "ticket"
+    t.string   "insurance"
+    t.text     "i_comment"
   end
 
   create_table "page_parts", force: true do |t|
