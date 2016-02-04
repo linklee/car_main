@@ -5,53 +5,59 @@ namespace :db do
 
 
   task populate: :environment do
-  4.times do |n|
-Article.create!(header: "holiday driving tips", day: "31", month: "Jan'16", p:
-  "some text texttextsdfkldskl lkdfsklfkld sfkldjsm,f jkdsk text dsfkjsdjkfkjdsjkfdsjk some text texttextsdfkldskl lkdfsklfkld sfkldjsm,f jkdsk text dsfkjsdjkfkjdsjkfdsjk dsfkjsdjkfkjdsjkfdsjk ...",
-  link: "http://blog.com/posts/5")
-end
+      admin = User.create!(name: "Example User",
+   email: "admin@admin.com",
+   password: "admin1",
+   password_confirmation: "admin1",
+   admin: true)
+
+    4.times do |n|
+      Article.create!(header: "holiday driving tips", day: "31", month: "Jan'16", p:
+        "some text texttextsdfkldskl lkdfsklfkld sfkldjsm,f jkdsk text dsfkjsdjkfkjdsjkfdsjk some text texttextsdfkldskl lkdfsklfkld sfkldjsm,f jkdsk text dsfkjsdjkfkjdsjkfdsjk dsfkjsdjkfkjdsjkfdsjk ...",
+        link: "http://blog.com/posts/5")
+    end
 
     #auto glass repair
-     PagePart.create!(  page_name: "services",
+    PagePart.create!(  page_name: "services",
       text: "<b>1. The Accident </b>- After the accident can be nerve racking and overwhelming we step in to make sure that you are taken well care of and not taken advantage of. 
-<br><br>• Contact insurance carrier - We do this so you don’t have to! We make sure to interact with the insurance companies and make sure that you are taken well care of. 
-<br><br>• Drop by or schedule an appointment - From there your insurance company will get in touch with us for you to set up an appointment. We get all the details that we need in order to move forward efficiently. 
-<br><br><b>2. Your Estimate</b> We offer free estimates! We do this to assess how much damage has come from the accident and how much it is going to cost us. We have highly trained advisors who complete your estimate accurately and efficient. 
-<br><br>• Prepare estimate - We typically already have an idea of your estimate once you submitted your image at the beginning, but we send it to your insurance company as well. 
-<br><br>• Arrange rental car - If there is a specific kind of car youd like to rent, we can work with you to arrange that. We make sure that you are well taken care of throughout this whole process. 
-<br><br>• Insurance company review - With your rental, and estimate, we always send the information to your insurance company so that they can approve and keep you in the loop! 
-<br><br>
-• Provide contact info for updates via phone, email or text - We want to keep you updated so we make sure to have all areas covered. Even though you have a rental car, theres no car like your own! 
-<br><br>
-<b>3. Vehicle Disassembly </b> - Your car will be taken apart and not driveable for sometime. 
-<br><br>• Vehicle taken apart to identify all damage - We make sure that we asses all areas of your car and that there wasn’t any other hidden damage. 
-<br><br>• Customer and insurance company approval - From here the insurance company needs to approve the pricing and information in order for us to move forward. 
-<br><br>• Estimated completion date sent via phone, email or text - We also keep you in the loop and let you know the final price, estimated time schedule, and anything else that might be needed. 
-<br><br>
-<b>4. Vehicle Repair</b> - We can now finally get started on the vehicle repair. Sometimes we have to order specific pieces if we don’t have them in stock. 
-<br><br>• Body, parts and mechanical repairs - We start to repair what we can and make sure that it is being done professionally and accurately. 
-<br><br>• First quality inspection - A manager always over looks the process and approves that the car has been fixed, updated, and is ready for the next step. 
-<br><br>• Confirm delivery date via phone, email or text - We like to keep the insurance company as well as the customer in the loop. So we contact you again to let you know if we are on schedule or if there are any delays. 
-<br><br>
-<b>5. Vehicle Paint</b>- This is an important part of the repair.. This hides that you were in an accident! 
-<br><br>• Body smoothing and sanding - We cant just simply paint on the car, we have to smooth the car, sand it, and find the appropriate color. 
-<br><br>• Primer, paint and clear coat applied - Once those factors are completed we apply the clear coat and paint. This takes sometime for drying. 
-<br><br>• Second quality inspection - Now a manager comes to check the process of the car and the paint job. If all looks good, we move on to the next step and your car will be ready in no time! 
-<br><br>
-<b>6. Vehicle Reassembly </b>- From here we are almost done with the repair of your car! We start to reassmble and put it back together. 
-<br><br>• Vehicle put back together - We are excited for you to see your 'brand' new car! 
-<br><br>• Final delivery date reminder sent via phone, email or text - We send out any final information to you and your insurance company. 
-<br><br>
-<b>7. Quality Assurance</b> - We always double and triple check everything. We want to make sure that it looks perfect and that you are satisfied. 
-<br><br>• Light detailing - We do some light work, if needed. 
-<br><br>• Final Service Advisor quality assurance check - We have our final quality assurance check making sure that it is perfect and
+      <br><br>• Contact insurance carrier - We do this so you don’t have to! We make sure to interact with the insurance companies and make sure that you are taken well care of. 
+        <br><br>• Drop by or schedule an appointment - From there your insurance company will get in touch with us for you to set up an appointment. We get all the details that we need in order to move forward efficiently. 
+        <br><br><b>2. Your Estimate</b> We offer free estimates! We do this to assess how much damage has come from the accident and how much it is going to cost us. We have highly trained advisors who complete your estimate accurately and efficient. 
+          <br><br>• Prepare estimate - We typically already have an idea of your estimate once you submitted your image at the beginning, but we send it to your insurance company as well. 
+          <br><br>• Arrange rental car - If there is a specific kind of car youd like to rent, we can work with you to arrange that. We make sure that you are well taken care of throughout this whole process. 
+          <br><br>• Insurance company review - With your rental, and estimate, we always send the information to your insurance company so that they can approve and keep you in the loop! 
+          <br><br>
+          • Provide contact info for updates via phone, email or text - We want to keep you updated so we make sure to have all areas covered. Even though you have a rental car, theres no car like your own! 
+          <br><br>
+          <b>3. Vehicle Disassembly </b> - Your car will be taken apart and not driveable for sometime. 
+          <br><br>• Vehicle taken apart to identify all damage - We make sure that we asses all areas of your car and that there wasn’t any other hidden damage. 
+          <br><br>• Customer and insurance company approval - From here the insurance company needs to approve the pricing and information in order for us to move forward. 
+          <br><br>• Estimated completion date sent via phone, email or text - We also keep you in the loop and let you know the final price, estimated time schedule, and anything else that might be needed. 
+          <br><br>
+          <b>4. Vehicle Repair</b> - We can now finally get started on the vehicle repair. Sometimes we have to order specific pieces if we don’t have them in stock. 
+          <br><br>• Body, parts and mechanical repairs - We start to repair what we can and make sure that it is being done professionally and accurately. 
+          <br><br>• First quality inspection - A manager always over looks the process and approves that the car has been fixed, updated, and is ready for the next step. 
+          <br><br>• Confirm delivery date via phone, email or text - We like to keep the insurance company as well as the customer in the loop. So we contact you again to let you know if we are on schedule or if there are any delays. 
+          <br><br>
+          <b>5. Vehicle Paint</b>- This is an important part of the repair.. This hides that you were in an accident! 
+          <br><br>• Body smoothing and sanding - We cant just simply paint on the car, we have to smooth the car, sand it, and find the appropriate color. 
+          <br><br>• Primer, paint and clear coat applied - Once those factors are completed we apply the clear coat and paint. This takes sometime for drying. 
+          <br><br>• Second quality inspection - Now a manager comes to check the process of the car and the paint job. If all looks good, we move on to the next step and your car will be ready in no time! 
+          <br><br>
+          <b>6. Vehicle Reassembly </b>- From here we are almost done with the repair of your car! We start to reassmble and put it back together. 
+          <br><br>• Vehicle put back together - We are excited for you to see your 'brand' new car! 
+          <br><br>• Final delivery date reminder sent via phone, email or text - We send out any final information to you and your insurance company. 
+          <br><br>
+          <b>7. Quality Assurance</b> - We always double and triple check everything. We want to make sure that it looks perfect and that you are satisfied. 
+          <br><br>• Light detailing - We do some light work, if needed. 
+            <br><br>• Final Service Advisor quality assurance check - We have our final quality assurance check making sure that it is perfect and
 
-good to go. 
-<br><br>• Vehicle test-drive as needed 
-<br><br>
-<b>8. On-Time Delivery</b> - We strive to meet our deadlines, sometimes they are ready later or quicker than expected. 
-<br><br>• Pick up your vehicle on time - And return your rental car! 
-<br><br>• Get back to the rhythm of your life - We hope that this process was simple and efficient for you. We hope to see you again in the future, but not anytime too soon!")
+            good to go. 
+            <br><br>• Vehicle test-drive as needed 
+            <br><br>
+            <b>8. On-Time Delivery</b> - We strive to meet our deadlines, sometimes they are ready later or quicker than expected. 
+            <br><br>• Pick up your vehicle on time - And return your rental car! 
+            <br><br>• Get back to the rhythm of your life - We hope that this process was simple and efficient for you. We hope to see you again in the future, but not anytime too soon!")
      #auto glass repair
      PagePart.create!(  page_name: "auto glass repair",
       text: "On top of all the services that we offer, we also can fix your auto glass. Maybe you didn’t get in a complete wreck and something hit your windshield. We can fix that for you and come to your house, or workplace, to fix it right there on the spot for you. All of our services are pain and hassle free. Just send us the picture and we will provide you with the information needed to move forward.")
@@ -79,7 +85,7 @@ good to go.
     PagePart.create!(  page_name: "towing",
       text: "We offer on-site towing. We will bring your car into our shop to estimate what it would cost to get it fixed. We understand that when you are in accident you don’t want to deal with driving the car to the shop, or maybe you cant even drive it! We are here to help you, and don’t charge additional for this. We are equipped to help with your towing needs. Just give us a call and we will bring it to our shop as quickly and efficiently as we can. Typically we let us our customers it can range from 30 minutes to an hour before a tow truck arrives. From there if you need further assistance or a rental car we can work out those details!")
 
-  
+
     #bumber repair
     PagePart.create!(  page_name: "bumber repair",
       text: "
@@ -117,12 +123,7 @@ good to go.
     <br><br>
     • <br>
     Payment options are made to help you! Sometimes an accident can happen without a third party. We work with you to do payment options on something as simple as glass repair, windshield repair, etc. ")
-  
-  admin = User.create!(name: "Example User",
-   email: "admin@admin.com",
-   password: "admin1",
-   password_confirmation: "admin1",
-   admin: true)
+
 
 
   3.times do |n|
@@ -151,23 +152,23 @@ good to go.
  PagePart.create!(  page_name: "services",
   text: "Our services")
  10.times do |n|
-    photo1 = FFaker::Avatar.image
-    photo2 = FFaker::Avatar.image
-    name  = Faker::Name.name
-    car_type = "Car"
-    car_year = "1960"
-    car_model = "Impala"
-    car_manufacturer = "chevrolet"
-    email = "example-#{n+1}@r.org"
-    phone = Faker::PhoneNumber.phone_number
-    status = "0"
-    coords = "12. 12 .12"
-    Lead.create!(name: name,
-     email: email,
-     photo1: photo1, photo2: photo2, car_type: car_type,
-     car_year: car_year, car_manufacturer: car_manufacturer,
-     phone: phone, status: status, car_model:car_model, coords: coords
-     )
-  end
+  photo1 = FFaker::Avatar.image
+  photo2 = FFaker::Avatar.image
+  name  = Faker::Name.name
+  car_type = "Car"
+  car_year = "1960"
+  car_model = "Impala"
+  car_manufacturer = "chevrolet"
+  email = "example-#{n+1}@r.org"
+  phone = Faker::PhoneNumber.phone_number
+  status = "0"
+  coords = "12. 12 .12"
+  Lead.create!(name: name,
+   email: email,
+   photo1: photo1, photo2: photo2, car_type: car_type,
+   car_year: car_year, car_manufacturer: car_manufacturer,
+   phone: phone, status: status, car_model:car_model, coords: coords
+   )
+end
 end
 end
