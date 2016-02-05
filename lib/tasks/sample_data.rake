@@ -9,17 +9,16 @@ namespace :db do
    PagePart.create!(  page_name: "links",
     text: "<a href='/service_process' class='smoothScroll '>Our service process</a>
     <a href='/restore' class='smoothScroll '>Car repair process</a>")
-   exit
+   
        #stuff
        PagePart.create!(  page_name: "phone",
         text: "818-844-7529")
+
        PagePart.create!(  page_name: "logo",
         text: "Fast Autobody Center")
        
        PagePart.create!(  page_name: "css",
         text: "<style>
-
-
         .phone-header {
           /*phone  font-size , you right now 28px*/
 
@@ -38,9 +37,6 @@ namespace :db do
               .logo-sign {
                 color: white !important
               }
-
-
-
 
               </style>")
        
