@@ -68,6 +68,8 @@ GEM
     ffi (1.9.10)
     font-awesome-rails (4.5.0.0)
       railties (>= 3.2, < 5.0)
+    heroku-deflater (0.6.2)
+      rack (>= 1.4.5)
     hike (1.2.3)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
@@ -187,6 +189,7 @@ DEPENDENCIES
   faker (= 1.1.2)
   ffaker
   font-awesome-rails
+  heroku-deflater
   jbuilder (= 1.0.2)
   jquery-rails (= 3.0.4)
   pg (= 0.15.1)
