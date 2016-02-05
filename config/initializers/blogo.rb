@@ -24,7 +24,7 @@ Blogo.configure do |config|
   # Set disqus shortname if you want to your users to have ability to comment
   # your posts.
   #
-  # config.disqus_shortname = 'brainv2'
+   config.disqus_shortname = 'FastAuto'
 
 
   # Put GOOGLE ANALYTICS ID here, if you want to use Google Analytics
