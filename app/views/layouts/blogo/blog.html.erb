@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @meta[:title] %></title>
+  <meta charset="UTF-8">
+
+  <%= render partial: 'blogo/shared/meta' %>
+
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag "blogo/blog" %>
+
+  <%= auto_discovery_link_tag :atom, blogo_feed_path %>
+  <!--= render 'blogo/shared/google_analytics' %-->
+</head>
+<body>
+  <style>.pure-button:hover {
+    text-decoration: none!important;
+  }
+  .tags a {
+    text-decoration: none;
+  }
+  .pure-button.button-secondary{
+   /* color: #fff!important;
+    background-color: #337ab7!important;
+    border-color: #2e6da4!important*/;
+    background-color: #0078e7
+  }
+  aside h1 {
+    background: #1b1b1b
+  }
+  body {
+         background-image: none;
+  }
+</style>
+
+<div id="container">
+  <header class="blogo-header" style ="background-color: #1b1b1b;">
+    <div class='header-titles'>
+      <h1><%= link_to "Our blog ", "/blog" %></h1>
+      <h2><a href="/blog" style="color:white;text-decoration:none">Fast Autobody Center</a></h2>
+
+    </div>
+
+    <div class='header-icons'>
+      <a href="/" style="color:white;text-decoration:none">Return to website</a>
+    </div>
+  </header>
+
+  <div id="content">
+    <div class="pure-g-r">
+      <div class="pure-u-3-4">
+        <%= yield %>
+      </div>
+
+      <div class="pure-u-1-4">
+        <%= render partial: 'blogo/shared/aside' %>
+      </div>
+    </div>
+
+    <div class="pure-g-r">
+      <div class="pure-u-1-1">
+        <%= link_to "Fast Autobody Center", "/", class: "powered-by" %>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+</body>
+</html>

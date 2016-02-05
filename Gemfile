@@ -14,6 +14,7 @@ gem 'carrierwave', '~> 0.9'
 gem "font-awesome-rails"
 gem 'sprockets-rails'
 gem 'rest-client'
+gem 'blogo'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'

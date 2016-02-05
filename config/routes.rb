@@ -30,7 +30,8 @@ SampleApp::Application.routes.draw do
   match '/service_process',  to: 'static_pages#service_process',            via: 'get'
   match '/restore',  to: 'static_pages#services',            via: 'get'
   get :check_ticket_status, to: 'static_pages#check_ticket_car_status',
-   as: 'check_ticket_car_status'
+  as: 'check_ticket_car_status'
+  Blogo::Routes.mount_to(self, at: '/blog')
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

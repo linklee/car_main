@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :admin_user,     only: [:index, :edit, :update, :destroy]
 
   # GET /articles
   # GET /articles.json
@@ -71,4 +72,7 @@ class ArticlesController < ApplicationController
     def article_params
       params.require(:article).permit(:header, :day, :month, :link, :p, :string)
     end
-end
+     def admin_user
+      redirect_to(root_url) unless current_user.admin?
+    end
+  end

@@ -26,7 +26,14 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     arel (4.0.2)
+    bcrypt (3.1.10)
     bcrypt-ruby (3.1.2)
+    blogo (0.1.3)
+      bcrypt (~> 3.0)
+      coffee-rails
+      jquery-rails
+      rails (~> 4.0)
+      sass-rails (>= 4)
     bootstrap-sass (2.3.2.0)
       sass (~> 3.2)
     bootstrap-will_paginate (0.0.9)
@@ -180,6 +187,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt-ruby (= 3.1.2)
+  blogo
   bootstrap-sass (= 2.3.2.0)
   bootstrap-will_paginate (= 0.0.9)
   capybara (= 2.1.0)

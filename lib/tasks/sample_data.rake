@@ -5,18 +5,56 @@ namespace :db do
 
 
   task populate: :environment do
-      admin = User.create!(name: "Example User",
-   email: "admin@admin.com",
-   password: "admin1",
-   password_confirmation: "admin1",
-   admin: true)
 
-    4.times do |n|
-      Article.create!(header: "holiday driving tips", day: "31", month: "Jan'16", p:
-        "some text texttextsdfkldskl lkdfsklfkld sfkldjsm,f jkdsk text dsfkjsdjkfkjdsjkfdsjk some text texttextsdfkldskl lkdfsklfkld sfkldjsm,f jkdsk text dsfkjsdjkfkjdsjkfdsjk dsfkjsdjkfkjdsjkfdsjk ...",
-        link: "http://blog.com/posts/5")
-    end
+   PagePart.create!(  page_name: "links",
+    text: "<a href='/service_process' class='smoothScroll '>Our service process</a>
+    <a href='/restore' class='smoothScroll '>Car repair process</a>")
+   exit
+       #stuff
+       PagePart.create!(  page_name: "phone",
+        text: "818-844-7529")
+       PagePart.create!(  page_name: "logo",
+        text: "Fast Autobody Center")
+       
+       PagePart.create!(  page_name: "css",
+        text: "<style>
 
+
+        .phone-header {
+          /*phone  font-size , you right now 28px*/
+
+          font-size: 28px ;
+
+          /*phone  font-size , you right now white*/
+
+          color:white !important; }
+
+          /* logo font-size */
+          .logo-sign{ 
+            font-size: 28px !important  }
+
+            /* logo color  ( change white for blue to see the result */
+
+              .logo-sign {
+                color: white !important
+              }
+
+
+
+
+              </style>")
+       
+       admin = User.create!(name: "Example User",
+         email: "admin@admin.com",
+         password: "admin1",
+         password_confirmation: "admin1",
+         admin: true)
+
+       4.times do |n|
+        Article.create!(header: "holiday driving tips", day: "31", month: "Jan'16", p:
+          "some text texttextsdfkldskl lkdfsklfkld sfkldjsm,f jkdsk text dsfkjsdjkfkjdsjkfdsjk some text texttextsdfkldskl lkdfsklfkld sfkldjsm,f jkdsk text dsfkjsdjkfkjdsjkfdsjk dsfkjsdjkfkjdsjkfdsjk ...",
+          link: "http://blog.com/posts/5")
+      end
     #auto glass repair
     PagePart.create!(  page_name: "services",
       text: "<b>1. The Accident </b>- After the accident can be nerve racking and overwhelming we step in to make sure that you are taken well care of and not taken advantage of. 

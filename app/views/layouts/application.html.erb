@@ -99,9 +99,10 @@
   <% end %>
 
   <%= render 'layouts/footer' %>
-<!-- <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js" async></script>!-->
+ <!-- <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js" async></script>!-->
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css" async>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css" async>
+<%=raw PagePart.find_by(page_name: 'css').text%>
 
   <%= debug(params) if Rails.env.development? %>
    <!— BEGIN JIVOSITE CODE {literal} —>
