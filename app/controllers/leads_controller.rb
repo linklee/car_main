@@ -61,7 +61,7 @@ class LeadsController < ApplicationController
   def update
     @lead = Lead.find(params[:id])
 
-    if @lead.update_attributes(status: params[:status], email: params[:f])
+    if @lead.update_attributes(status: params[:status])
       flash[:success] = "Information updated"
       redirect_to "/leads/"
     else
