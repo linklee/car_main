@@ -5,17 +5,39 @@
 <h3 class="center">Current status of your car is <%= @lead.status %> </h3><br/><br/>		    
 
 
+<center style="">
+	<% (1..8).each do |i| %>
+
+
+
+	<div class="main-wrap wrap-<%= i %> hidden" style="cursor:pointer;background: rgba(0,0,0,0.8);position:fixed;top:80px; left:0;right:0;bottom:0">
+
+		<div style="display:block;overflow:hidden;" class="photo-wrap">
+
+			<img style="cursor:default;cursor:default;max-width:80%"  onclick = "event.preventDefault();" class="img img-responsive" src = "/stat_photo/<%= i %>.jpg">			<i style="color:rgba(0,0,0,0.4); margin-left:-30px;position:absolute" class="photo-closer fa fa-times fa-2x"></i></img>
+		</div>
+	</div>
+	<% end %>
+</center>
+
 <div class= "text-center status-wrap pure-g " >
 
-
 	<div class="pure-u-1 pure-u-md-1-2" style='padding-left: 15px;'>
-		<%=image_tag("stat/speedometer" + @lead.status + ".png", :class => "status_image ", alt: "status")%>
+		<%=image_tag("stat/speedometer" + @lead.status + ".png", :class => "status_image ", :alt=>  "status", :usemap  => "#i-map" , :style => "")%>
+		<map name="i-map" id="i-map">
+			<area alt="" onclick="$('.wrap-1').removeClass('hidden');" title="" href="#" shape="poly" coords="4,293,56,293,63,273,144,273,149,246,5,245,3,253,0,275" />
+			<area onclick="$('.wrap-2').removeClass('hidden');"  alt="" title="" href="#" shape="poly" coords="46,166,151,163,153,142,42,142,39,152" />
+			<area onclick="$('.wrap-3').removeClass('hidden');"  alt="" title="" href="#" shape="poly" coords="62,65,224,64,222,37,66,44" />
+			<area onclick="$('.wrap-4').removeClass('hidden');" alt="" title="" href="#" shape="rect" coords="277,17,392,1" />
+			<area onclick="$('.wrap-5').removeClass('hidden');"  alt="" title="" href="#" shape="poly" coords="447,39,455,65,562,66,556,44" />
+			<area  onclick="$('.wrap-6').removeClass('hidden');" alt="" title="" href="#" shape="poly" coords="513,141,522,167,672,167,671,141" />
+			<area onclick="$('.wrap-7').removeClass('hidden');"  alt="" title="" href="#" shape="poly" coords="517,260,516,284,662,283,661,259" />
+			<area onclick="$('.wrap-8').removeClass('hidden');"  alt="" title="" href="#" shape="poly" coords="450,359,451,390,553,386,549,364" />
+		</map>
 		<% if @lead.status_photo 
 			image_tag(@lead.photo2, :style=> "display:inline")
 		end
 		-%>
-
-
 	</div>
 	<div class="pure-u-1 pure-u-md-1-2 " style="width:300px;margin:0 auto;text-align:left ">
 		<h4>1. Contact insurance carrier </h4>
@@ -74,3 +96,31 @@
 		</center>
 		<% end -%>
 
+
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('map').imageMapResize(); $('area').click(function(){console.log(1)});
+				$('.photo-wrap').css('max-height', $(window).height()*0.9 + "px"); 
+				//$('.main-wrap').not('.img').click(function(){});
+
+				// $('.main-wrap').on('click', function(e) {
+				// 	if (e.target !== this){
+				// 		return;
+				// 	}
+				// 	$('.main-wrap').addClass('hidden');
+				// }); 	
+
+			$('.main-wrap').on('click', function(e) {
+				$('.main-wrap').addClass('hidden');
+			}).on('click', 'img', function(e) {
+				    // clicked on descendant div
+				    e.stopPropagation();
+				});
+
+		});
+		function show_picture(index) {
+			$('wrap-' + index).removeClass('hidden');
+
+		}
+		</script>
