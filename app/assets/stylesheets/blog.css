@@ -1,12 +1,13 @@
 .blog-d {
 	background: #fff;
 	text-align: left;
-	height: 310px;
+	height: 340px;
 	border: 1px solid #ddd;
 	padding: 3px;
 	padding-bottom: 6px;
 	margin:6px;
 	background: #eaeaea;
+	    overflow: hidden;
 }
 .blog-header-h3 {
 	color: #00a5db;

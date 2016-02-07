@@ -10,6 +10,12 @@
 
 	<div class="pure-u-1 pure-u-md-1-2" style='padding-left: 15px;'>
 		<%=image_tag("stat/speedometer" + @lead.status + ".png", :class => "status_image ", alt: "status")%>
+		<% if @lead.status_photo 
+			image_tag(@lead.photo2, :style=> "display:inline")
+		end
+		-%>
+
+
 	</div>
 	<div class="pure-u-1 pure-u-md-1-2 " style="width:300px;margin:0 auto;text-align:left ">
 		<h4>1. Contact insurance carrier </h4>

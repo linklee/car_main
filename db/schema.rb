@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160205150733) do
+ActiveRecord::Schema.define(version: 20160206135422) do
 
   create_table "articles", force: true do |t|
     t.string   "header"
@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 20160205150733) do
     t.string   "ticket"
     t.string   "insurance"
     t.text     "i_comment"
+    t.string   "status_photo"
   end
 
   create_table "page_parts", force: true do |t|

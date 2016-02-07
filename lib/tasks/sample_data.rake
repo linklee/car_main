@@ -20,9 +20,9 @@ namespace :db do
        PagePart.create!(  page_name: "css",
         text: "<style>
         .phone-header {
-          /*phone  font-size , you right now 28px*/
+          /*phone  font-size , you right now 23px*/
 
-          font-size: 28px ;
+          font-size: 23px ;
 
           /*phone  font-size , you right now white*/
 
@@ -30,7 +30,7 @@ namespace :db do
 
           /* logo font-size */
           .logo-sign{ 
-            font-size: 28px !important  }
+            font-size: 3em !important  }
 
             /* logo color  ( change white for blue to see the result */
 

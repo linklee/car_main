@@ -26,13 +26,24 @@ class LeadsController < ApplicationController
     @lead.status = '0';
     @lead.ticket = rand(1000..10000);
     if @lead.save
-      #sign_in @lead
+      #email to @lead
       RestClient.post "https://api:key-f99e5c3db48a9ad293da99a2b7e9da0b"\
       "@api.mailgun.net/v3/sandbox43f2b94d5491492fb7be34200bc81352.mailgun.org/messages",
       :from => "Fast Autobody Center <fbc@sandbox43f2b94d5491492fb7be34200bc81352.mailgun.org>",
       :to => @lead.email,
       :subject => "Request successfully created!",
       :text => "Thank you for using our service. We will contact you as soon as possible to give you our estimation. Your ticket number is "  + @lead.ticket.to_s
+
+      #email to admin
+      RestClient.post "https://api:key-f99e5c3db48a9ad293da99a2b7e9da0b"\
+      "@api.mailgun.net/v3/sandbox43f2b94d5491492fb7be34200bc81352.mailgun.org/messages",
+      :from => "Fast Autobody Center <fbc@sandbox43f2b94d5491492fb7be34200bc81352.mailgun.org>",
+      :to => "nevernight721@gmail.com",
+      #"edwineyvazian@gmail.com",
+      :subject => "New customer!",
+      :text =>  "name: " + @lead.name + " phone: " + @lead.phone + " ticket: " + @lead.ticket.to_s
+ 
+
 
       flash[:success] = "Request successfully created! 
       Thank you. We will contact you as soon as possible to give you our estimation.
@@ -49,9 +60,10 @@ class LeadsController < ApplicationController
 
   def update
     @lead = Lead.find(params[:id])
-    if @lead.update_attributes(status: params[:status])
+
+    if @lead.update_attributes(status: params[:status], email: params[:f])
       flash[:success] = "Information updated"
-      redirect_to leads_url
+      redirect_to "/leads/"
     else
       render 'edit'
     end
