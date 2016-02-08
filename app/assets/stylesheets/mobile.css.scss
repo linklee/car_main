@@ -25,7 +25,7 @@
        background-position: top!important;
      }
      .right_nav {
-       display: none; 
+       display: none!important; 
      }
    }
    @media (max-width: 500px){
@@ -35,7 +35,7 @@
      }
      i.photo-closer{  position: fixed !important;
        top: 90px;
-       right: 5l0px;
+       right: 50px;
      }
      .fill {
        background-size: cover!important;
@@ -68,8 +68,9 @@
        width:320px!important;
      }
    }
+
    @media (min-width:900px) {
-     .logo-sign {margin-left: 235px!important;}
+     /*.logo-sign {margin-left: 235px!important;}*/
      .fill {
        background-position: center bottom !important;
        padding-top: 68px !important;
@@ -93,15 +94,15 @@
      .black-navbar {
       padding-bottom: 3px!important;
       padding-top: 3px!important;
-     }
-     .stuff {
+    }
+    .stuff {
       background: none !important;
       top: 57px!important;
       border-bottom: 0px!important;
-     }
-     #myCarousel {
+    }
+    #myCarousel {
       margin-top: 0px!important;
-     }
+    }
     .stuff > center {
       margin-top:0px!important;
     }
@@ -111,13 +112,32 @@
     .fill {
       padding-top:85px!important;
     }
-   }
+    .nav-wrap-main {
+       margin-right: 20px;
+    }
+    .logo-sign {
+      margin-left: 230px!important;
+    }
+    /*end trash with header*/
+  }
 
+  @media (min-width: 1300px) {
+   .fill {
+    padding-top:62px!important;
+  }
+  .logo-sign {
+      margin-left: 235px!important;
+    }
+}
+@media (min-width: 1500px){
+  .carousel-phone {
+    margin-top: 15% !important;
+  }
+}
 
-
-   .btn-phone {
-     margin-top:-10px
-   }
-   .div-wrap-phone {
-     border:0px solid  #ADADAD;;background:rgba(0,0,0,0.3);max-width:400px;padding-top:5px;margin-top:-5px;
-   }
+.btn-phone {
+ margin-top:-10px
+}
+.div-wrap-phone {
+ border:0px solid  #ADADAD;;background:rgba(0,0,0,0.3);max-width:400px;padding-top:5px;margin-top:-5px;
+}
