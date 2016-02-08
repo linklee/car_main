@@ -132,7 +132,7 @@ namespace :db do
 
     #home
     PagePart.create!(  page_name: "home",
-      text: "Fast Auto BodyCenter is online auto program! You can check your repair process as well ask for a repair by taking a picture of your car. All of this can be done right on a smart-phone or desktop computer. Old School? We can do estimates right over the phone too! 
+      text: "<b>Fast Auto BodyCenter</b> is online auto program! You can check your repair process as well ask for a repair by taking a picture of your car. All of this can be done right on a smart-phone or desktop computer. Old School? We can do estimates right over the phone too! 
       <br><br>
       Once your repair has been submitted you can check your progress by the phone or computer. It's simply and easy! We put your mind to ease knowing that you can see the progress on your vehicle. We know first hand how nerve wrecking it can be to deal with an auto company to find out about repairs, and still manage to be patient! You can always call us and ask us questions or the status on your car, we don’t oppose to that! With technology being so advance we just want to make sure you have quick easy access to it! 
       <br><br>
