@@ -89,7 +89,31 @@
        margin-left:-10px;
        border-radius: 0;
      }
+     /* trash with header */
+     .black-navbar {
+      padding-bottom: 3px!important;
+      padding-top: 3px!important;
+     }
+     .stuff {
+      background: none !important;
+      top: 57px!important;
+      border-bottom: 0px!important;
+     }
+     #myCarousel {
+      margin-top: 0px!important;
+     }
+    .stuff > center {
+      margin-top:0px!important;
+    }
+    .chat_button {
+      margin-top:-70px!important;
+    }
+    .fill {
+      padding-top:85px!important;
+    }
    }
+
+
 
    .btn-phone {
      margin-top:-10px
