@@ -33,72 +33,76 @@
       <span id= "logo" class="menu_opener" >Menu
       </span>
       <a  href ="/" style = "  font-size:3em;  font-weight: 700;margin-left: 120px;margin-top:10px;    text-decoration: none;color:white" class="logo-sign">
-      <%= PagePart.find_by(page_name: 'logo').text%>  </a>
-      <nav class="nav-wrap-main ">
+        <%= PagePart.find_by(page_name: 'logo').text%>  </a>
+        <nav class="nav-wrap-main ">
 
 
-        <ul class="ul_right nav pull-right right_nav">
-          <li>             
-          </li>
-          <li style="margin-top: 10px;margin-right:-215px;    font-size: 23px;"><%= link_to PagePart.find_by(page_name: 'phone').text, "#", style: "color:white;", class: 'phone-header' %></li>
-          <li style ="margin-top: -15px;    margin-left: 30px;"><%= link_to "", "http://twitter.com", class: "fa fa-twitter social_icon" %>
-          </li>
-          <li style ="margin-top: -15px;">
-            <%= link_to "", "http://facebook.com", class: "fa fa-facebook social_icon" %>
-          </li>
-          <li style ="margin-top: -15px;margin-left: -7px;">  
-            <%= link_to "", "http://youtube.com", class: "fa fa-youtube social_icon" %>
-          </li>
-
-          <% if signed_in? && current_user.admin? %>
-          <style>
-            .navbar .nav.pull-right {
-
-              margin-right: -67px!important;}
-            </style>
-
-            <li id="fat-menu" class="dropdown" style ="margin-left: 50px;">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Account <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li><%= link_to "Profile", current_user %></li>
-                <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-                <li class="divider"></li>
-                <li><%= link_to "Page parts", '/page_parts' %></li>
-                <li><%= link_to "Leads", leads_path %></li>
-                <li><%= link_to "Before/after", bas_path %></li>
-                <li><%= link_to "articles", '/articles' %></li>
-                <li class="divider"></li>
-                <li>
-                  <%= link_to "Sign out", signout_path, method: "delete" %>
-                </li>
-              </ul>
+          <ul class="ul_right nav pull-right right_nav">
+            <li>             
             </li>
-            <% else %>
-            <!--<li><%= link_to "Sign in", signin_path %></li>!-->
-            <% end %>
-          </ul>
-        </nav>
+            <li style="margin-top: 10px;margin-right:-215px;    font-size: 23px;"><%= link_to PagePart.find_by(page_name: 'phone').text, "#", style: "color:white;", class: 'phone-header' %></li>
+            <li style ="margin-top: -15px;    margin-left: 30px;"><%= link_to "", "http://twitter.com", class: "fa fa-twitter social_icon" %>
+            </li>
+            <li style ="margin-top: -15px;">
+              <%= link_to "", "http://facebook.com", class: "fa fa-facebook social_icon" %>
+            </li>
+            <li style ="margin-top: -15px;margin-left: -7px;">  
+              <%= link_to "", "http://youtube.com", class: "fa fa-youtube social_icon" %>
+            </li>
+
+            <% if signed_in? && current_user.admin? %>
+            <style>
+              .navbar .nav.pull-right {
+
+                margin-right: -67px!important;}
+                
+                .nav-wrap-main {
+                  margin-right: 40px;
+                }
+              </style>
+
+              <li id="fat-menu" class="dropdown" style ="margin-left: 50px;">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Account <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Profile", current_user %></li>
+                  <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                  <li class="divider"></li>
+                  <li><%= link_to "Page parts", '/page_parts' %></li>
+                  <li><%= link_to "Leads", leads_path %></li>
+                  <li><%= link_to "Before/after", bas_path %></li>
+                  <li><%= link_to "articles", '/articles' %></li>
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to "Sign out", signout_path, method: "delete" %>
+                  </li>
+                </ul>
+              </li>
+              <% else %>
+              <!--<li><%= link_to "Sign in", signin_path %></li>!-->
+              <% end %>
+            </ul>
+          </nav>
+        </div>
       </div>
-    </div>
-  </header>
-  <% if current_page?('/') %>
+    </header>
+    <% if current_page?('/') %>
 
 
-  <div class="stuff" style ="">
+    <div class="stuff" style ="">
 
-    <center style="margin-top:15px" class="green-button">
-     <h1 style="display:inline;font-size:3em">Free online estimate</h1> <br/>
-     <a  href="/new" class="btn btn-large btn-danger" style="/*margin-top:-12px*/;margin-left:5px">start here</a>
-   </center>
-   <a style= "float: left;margin-left:250px;
+      <center style="margin-top:15px" class="green-button">
+       <h1 style="display:inline;font-size:3em">Free online estimate</h1> <br/>
+       <a  href="/new" class="btn btn-large btn-danger" style="/*margin-top:-12px*/;margin-left:5px">start here</a>
+     </center>
+     <a style= "float: left;margin-left:250px;
 
-   margin-top: -35px;" onclick = "  jivo_api.open();" class = "chat_button  btn btn-medium btn-primary">Chat</a>
- </div>
- <% else -%>
- <div style="height:30px"></div>
- <script>
+     margin-top: -35px;" onclick = "  jivo_api.open();" class = "chat_button  btn btn-medium btn-primary">Chat</a>
+   </div>
+   <% else -%>
+   <div style="height:30px"></div>
+   <script>
   //hack for going to id from another page
   $('.ba-link').on('click', function() {document.location.href = "/#ba"; return false;});
   $('.services-link').on('click', function() {document.location.href = "/#services"; return false;});
