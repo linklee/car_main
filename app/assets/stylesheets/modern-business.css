@@ -253,7 +253,10 @@ a.menu_closer{
     position: absoulute!important;
     text-decoration: none;
     right: 10px;
-    top: 39px;
+    top: 51px;
+}
+.menu-wrap {
+    padding-top: 50px;
 }
 a{
     background: none;
