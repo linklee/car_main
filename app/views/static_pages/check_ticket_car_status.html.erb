@@ -77,7 +77,7 @@
 
 
 		<center style="">
-			<% @car_photo = CarPhoto.find_by(user_id: @lead.id)
+			<% @car_photo = CarPhoto.find_by(user_id: @lead.id.to_s)
 			(1..8).each do |i| 
 				@photo = @car_photo["p" + i.to_s]
 				if @photo != nil 
