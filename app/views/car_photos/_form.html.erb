@@ -1,0 +1,63 @@
+<%= form_for(@car_photo) do |f| %>
+<% if @car_photo.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@car_photo.errors.count, "error") %> prohibited this car_photo from being saved:</h2>
+
+  <ul>
+    <% @car_photo.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<div style="padding-left:30px">
+  <div class="field">
+    <%= f.label "1 Contact insurance carrier" %><br>
+    <%= f.file_field :p1 %>
+  </div>
+  <div class="field">
+    <%= f.label " 2 Your Estimate" %><br>
+    <%= f.file_field :p2 %>
+  </div>
+  <div class="field">
+    <%= f.label "3  Insurance approval" %><br>
+    <%= f.file_field :p3 %>
+  </div>
+  <div class="field">
+    <%= f.label "4 Vehicle Repair"%><br>
+    <%= f.file_field :p4 %>
+  </div>
+  <div class="field">
+    <%= f.label "5 Vehicle Paint" %><br>
+    <%= f.file_field :p5 %>
+  </div>
+  <div class="field">
+    <%= f.label "6 Vehicle Reassembly" %><br>
+    <%= f.file_field :p6 %>
+  </div>
+  <div class="field">
+    <%= f.label "7 Quality Assurance" %><br>
+    <%= f.file_field :p7 %>
+  </div>
+  <div class="field">
+    <%= f.label "8 Car is ready" %><br>
+    <%= f.file_field :p8 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :User_id%>
+    <%= f.text_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+</div>
+<% end %>
+<style>
+.field {
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(0,0,0, 0.7);
+  width: 300px
+}
+</style>

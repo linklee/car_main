@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160206135422) do
+ActiveRecord::Schema.define(version: 20160210092540) do
 
   create_table "articles", force: true do |t|
     t.string   "header"
@@ -77,6 +77,21 @@ ActiveRecord::Schema.define(version: 20160206135422) do
   end
 
   add_index "blogo_users", ["email"], name: "index_blogo_users_on_email", unique: true
+
+  create_table "car_photos", force: true do |t|
+    t.string   "p1"
+    t.string   "p2"
+    t.string   "p3"
+    t.string   "p4"
+    t.string   "p5"
+    t.string   "p6"
+    t.string   "p7"
+    t.string   "p8"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "user_id"
+    t.string   "string"
+  end
 
   create_table "leads", force: true do |t|
     t.string   "name"

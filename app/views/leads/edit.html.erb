@@ -4,7 +4,9 @@
 <div class="row">
   <div class="span6 offset3">
     <%= form_for(@lead) do |f| %>
+<%= link_to 'Change car photos', "/edit_photos?user_id="+ @lead.id.to_s + "#", class: "btn" %>
 
+   <br/> <br/>
     phone: <%= @lead.phone %>
     <br/>
     email: <%= @lead.email %>
@@ -40,8 +42,7 @@
    status: <%= select_tag(:status, options_for_select([['0', 0], ['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5], ['6', 6], ['7', 7], ['8', 8]], selected: @lead.status )) %>
 
    <br/>
-
-
+   
 
   <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
   <% end %>

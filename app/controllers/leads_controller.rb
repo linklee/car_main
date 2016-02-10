@@ -26,6 +26,12 @@ class LeadsController < ApplicationController
     @lead.status = '0';
     @lead.ticket = rand(1000..10000);
     if @lead.save
+      
+      #create car_photos
+      @car_photo = CarPhoto.new
+      @car_photo.user_id = @lead.id
+      @car_photo.save
+
       #email to @lead
       RestClient.post "https://api:key-f99e5c3db48a9ad293da99a2b7e9da0b"\
       "@api.mailgun.net/v3/sandbox43f2b94d5491492fb7be34200bc81352.mailgun.org/messages",

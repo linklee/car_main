@@ -1,4 +1,6 @@
 SampleApp::Application.routes.draw do
+  resources :car_photos
+
   resources :articles
 
   resources :page_parts
@@ -31,6 +33,7 @@ SampleApp::Application.routes.draw do
   match '/restore',  to: 'static_pages#services',            via: 'get'
   get :check_ticket_status, to: 'static_pages#check_ticket_car_status',
   as: 'check_ticket_car_status'
+  get :edit_photos, to: 'car_photos#edit_photos', as: 'edit_photos'
   Blogo::Routes.mount_to(self, at: '/blog')
 
   # The priority is based upon order of creation: first created -> highest priority.

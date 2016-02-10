@@ -1,0 +1,41 @@
+<h1>Listing car_photos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>P1</th>
+      <th>P2</th>
+      <th>P3</th>
+      <th>P4</th>
+      <th>P5</th>
+      <th>P6</th>
+      <th>P7</th>
+      <th>P8</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @car_photos.each do |car_photo| %>
+      <tr>
+        <td><%= car_photo.p1 %></td>
+        <td><%= car_photo.p2 %></td>
+        <td><%= car_photo.p3 %></td>
+        <td><%= car_photo.p4 %></td>
+        <td><%= car_photo.p5 %></td>
+        <td><%= car_photo.p6 %></td>
+        <td><%= car_photo.p7 %></td>
+        <td><%= car_photo.p8 %></td>
+        <td><%= link_to 'Show', car_photo %></td>
+        <td><%= link_to 'Edit', edit_car_photo_path(car_photo) %></td>
+        <td><%= link_to 'Destroy', car_photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Car photo', new_car_photo_path %>
