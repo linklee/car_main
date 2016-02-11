@@ -159,15 +159,15 @@ $(".phone").mask("?(999) 999-9999");
   $('[data-toggle="tooltip"]').tooltip();
 
 //trash
-var width = $(window).width();	
-if(width > 900) { 
-	var link = $('.ul_right');
-	var offset = link.offset();
+// var width = $(window).width();	
+// if(width > 900) { 
+// 	var link = $('.ul_right');
+// 	var offset = link.offset();
 
-	var left = offset.left + 80;
-	var right = left + link.outerWidth();
-	$('.chat_button').css('margin-left',left);
-}
+// 	var left = offset.left + 80;
+// 	var right = left + link.outerWidth();
+// 	$('.chat_button').css('margin-left',left);
+// }
 
 
 });

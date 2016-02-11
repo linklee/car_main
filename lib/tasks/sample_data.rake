@@ -5,7 +5,48 @@ namespace :db do
 
 
   task populate: :environment do
+ #auto glass repair
+     PagePart.create!(  page_name: "insurance_claim",
+      text: " 
+Here are Fast Body Center we make sure that you under the process that we go through and keep you updated. Here are the steps that we go through whenever a car comes in to be repaired. 
+<br>1. Contact Insurance Carrier 
+<br>You simply tell us your insurance company and their phone number. We will take care of the rest. You will need to verify with them the shop that your car is at so that way we can coordinate with one another back and forth. 
+<br>2. Your Estimate 
+<br>The car is inspected and put through our latest technology to see how much it is going to cost to be repaired. The estimate will determine the cost of repairs. 
+<br>3. Insurance Approval 
+<br>We send the estimate to your insurance company and they review it. They might try to negotiate or question pricing, which could slow down the process. The insurance company will determine if there is anything that doesn’t need to be done to the car and will also ask for pictures for verification. Once they approve the estimate, we start to work on the car. 
+<br>4. Vehicle Repair 
+<br>Now that we have the approval to go ahead, we disassemble the car as needed. From here we might need to order parts. If we do not have to order anything we go ahead and start to repair everything that needs to be done. 
+<br>5. Vehicle Reassembly 
+<br>We make sure that your car is fixed. We test out anything that needs to be verified and start to put your car back together. We use a computer-based system to analyze your car and its framework; this will ensure the highest quality of your car. If the car is fixed we then go on to the next step of painting the car and taking away any rust, etc. 
+<br>6. Vehicle Paint 
+<br>Paint is an important part of the process since we have to make sure that the color matches and there is accurately. This is a process of every vehicle; all panels are prepared for paint, primed, then sealed. A clear coat is then placed over the paint to ensure drying. 
+<br>7. Quality Assurance 
+<br>We work with a team that is highly staffed and well trained. We make sure that your car is top-notch ready meaning that it is as close to brand new as can be. We don’t want it to look like it was just in an accident. 
+<br>8. Car is Ready 
+<br>Your car is now ready! This is the last step! The customer can now come pick up the vehicle and is paid for. The customer and insurance company completes the final paper work. 
+<br>_______ 
+<br>Before the job is started we provide you with the steps that will be taken and direct you to the steps on our website. Feel free to contact us and send us any information prior to bringing your car into the shop. We will do our best over the phone and website to take care of you. 
+<br>You can stay up to date with your car process via text or visiting our website. We welcome online estimates and will compare it to other auto body shops. We will do our best to match prices, however we ensure quality and professionalism on every job that we do. 
+<br>We use the best and uttermost highest equipment, parts, and technology. With that being said we take pride in our quality and professionalism. We guarantee all of these things; it isn’t always about price, but rather about quality. We never accept jobs that we don’t feel we cant complete.
+      ")
+   exit
 
+
+ PagePart.create!(  page_name: "yelp_url",
+    text: "http://www.yelp.com")
+ 
+  Feedback.create!( k: "Amazing support!quck and fancy! bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla bla bla bla bla bla bla bla bla",
+  photo_url: "http://www.landingsumo.com/demos/Theme%2017/assets/img/ui-01.jpg",
+  name: "Eric Edwin",
+  location: "Long beach, CA"
+     )
+  Feedback.create!( k: "Amazing support!quck and fancy! bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla bla bla bla bla bla bla bla bla",
+  photo_url: "http://www.landingsumo.com/demos/Theme%2010/assets/img/ui-01.jpg",
+  name: "Mark Twain",
+  location: "Long beach, CA"
+     )
+ 
    PagePart.create!(  page_name: "links",
     text: "<a href='/service_process' class='smoothScroll '>Our service process</a>
     <a href='/restore' class='smoothScroll '>Car repair process</a>")
@@ -186,8 +227,8 @@ namespace :db do
  PagePart.create!(  page_name: "services",
   text: "Our services")
  10.times do |n|
-  photo1 = FFaker::Avatar.image
-  photo2 = FFaker::Avatar.image
+  photo1 = "fdfdfd"
+  photo2 = "dffdgfdgdf"
   name  = Faker::Name.name
   car_type = "Car"
   car_year = "1960"

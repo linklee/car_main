@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160210092540) do
+ActiveRecord::Schema.define(version: 20160211131448) do
 
   create_table "articles", force: true do |t|
     t.string   "header"
@@ -91,6 +91,16 @@ ActiveRecord::Schema.define(version: 20160210092540) do
     t.datetime "updated_at"
     t.string   "user_id"
     t.string   "string"
+  end
+
+  create_table "feedbacks", force: true do |t|
+    t.string   "k"
+    t.string   "name"
+    t.string   "location"
+    t.string   "yelp_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "photo_url"
   end
 
   create_table "leads", force: true do |t|

@@ -45,7 +45,6 @@
             <li style ="margin-top: -15px;margin-left: -7px;">  
               <%= link_to "", "http://youtube.com", class: "fa fa-youtube social_icon" %>
             </li>
-
             <% if signed_in? && current_user.admin? %>
             <style>
               .navbar .nav.pull-right {
@@ -54,6 +53,9 @@
 
                 nav.nav-wrap-main {
                   margin-right: 0px!important;
+                }
+                .chat_button_new {
+                  display:none!important;
                 }
               </style>
 
@@ -79,7 +81,10 @@
               <!--<li><%= link_to "Sign in", signin_path %></li>!-->
               <% end %>
             </ul>
+
           </nav>
+          <button style= "    float: right;
+    margin-right: -250px;" onclick = "  jivo_api.open();" class = "chat_button_new  btn btn-medium btn-primary">Chat</button>
         </div>
       </div>
     </header>
@@ -88,13 +93,11 @@
 
     <div class="stuff" style ="">
 
-      <center style="margin-top:15px" class="green-button">
-       <h1 style="display:inline;font-size:2.5em">Free online estimate</h1> <br/>
-       <a  href="/new" class="btn btn-medium btn-danger" style="/*margin-top:-12px*/;margin-left:5px">start here</a>
+      <center style="margin-top:15px;padding-top:15px" class="green-button">
+       <h1 style="display:inline;font-size:2.5em">Free online estimate</h1> 
+       <a  href="/new" class="btn btn-medium btn-danger" style="margin-top:-12px;margin-left:5px">start here</a>
      </center>
-     <a style= "float: left;margin-left:250px;
-
-     margin-top: -35px;" onclick = "  jivo_api.open();" class = "chat_button  btn btn-medium btn-primary">Chat</a>
+   
    </div>
    <% else -%>
    <div style="height:30px"></div>

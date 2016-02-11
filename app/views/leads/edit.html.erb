@@ -5,7 +5,14 @@
   <div class="span6 offset3">
     <%= form_for(@lead) do |f| %>
 <%= link_to 'Change car photos', "/edit_photos?user_id="+ @lead.id.to_s + "#", class: "btn" %>
+<br>
+    creation date:  <%= @lead.created_at %> <br>
+    updated at: <%= @lead.updated_at%> <br>
+    <br>
+     id: <%= @lead.id%> <br>
 
+    name: <%= @lead.name %>
+    <br/>
    <br/> <br/>
     phone: <%= @lead.phone %>
     <br/>

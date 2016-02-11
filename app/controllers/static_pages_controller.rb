@@ -56,7 +56,7 @@ class StaticPagesController < ApplicationController
   PagePart.find_by(page_name: 'towing').text,
   PagePart.find_by(page_name: 'dent repair').text,
   PagePart.find_by(page_name: 'auto glass repair').text,
-    #PagePart.find_by(page_name: 'insurance').text,
+  PagePart.find_by(page_name: 'insurance_claim').text,
     #PagePart.find_by(page_name: 'light').text,
     "","",
     PagePart.find_by(page_name: 'rent').text,

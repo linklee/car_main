@@ -1,8 +1,11 @@
 <li>
-  <%= link_to lead.name, edit_lead_path(lead.id) %> ---
-  <%= lead.status %>  
+    
+  <%= link_to lead.name, edit_lead_path(lead.id) %> ---   <span>id:</span> <%= lead.status %>   ---  <span>phone: </span><%= lead.phone %>  ---           
+ <span> status:</span> <%= lead.status %>    ---       <span>creation date:</span>  <%= lead.created_at.to_formatted_s(:short)  %>   --- 
+    <span>updated at:</span>      <%= lead.updated_at.to_formatted_s(:short) %> 
   <% if current_user.admin?  %>
      <%= link_to "delete", lead, method: :delete,
                                   data: { confirm: "You sure?" } %>
   <% end %>
+  <br/><br/>
 </li>
