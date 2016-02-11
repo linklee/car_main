@@ -30,7 +30,7 @@ Here are Fast Body Center we make sure that you under the process that we go thr
 <br>You can stay up to date with your car process via text or visiting our website. We welcome online estimates and will compare it to other auto body shops. We will do our best to match prices, however we ensure quality and professionalism on every job that we do. 
 <br>We use the best and uttermost highest equipment, parts, and technology. With that being said we take pride in our quality and professionalism. We guarantee all of these things; it isn’t always about price, but rather about quality. We never accept jobs that we don’t feel we cant complete.
       ")
-   exit
+  
 
 
  PagePart.create!(  page_name: "yelp_url",
