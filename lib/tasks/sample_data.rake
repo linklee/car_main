@@ -5,6 +5,11 @@ namespace :db do
 
 
   task populate: :environment do
+
+ PagePart.create!(  page_name: "12_photo_url",
+    text: "/photo2.jpg")
+exit
+
  #auto glass repair
      PagePart.create!(  page_name: "insurance_claim",
       text: " 
@@ -48,7 +53,7 @@ Here are Fast Body Center we make sure that you under the process that we go thr
      )
  
    PagePart.create!(  page_name: "links",
-    text: "<a href='/service_process' class='smoothScroll '>Our service process</a>
+    text: "
     <a href='/restore' class='smoothScroll '>Car repair process</a>")
    
        #stuff

@@ -19,6 +19,7 @@
     <center>
       <input style= "display: inline;
       margin-top: -2px;" type="checkbox" name="terms" value=""  required='true'> <span>I agree to <a href="/terms and conditions.docx">Terms and conditions</a></span><br>
+      <div style="padding-top:10px">Your personal information will not be shared</div>
     </center><br>
 
 
@@ -79,10 +80,10 @@
            <wizard>Step 4</wizard>
            <section>
            <div class="alert alert-success">Please, provide a photos of the damaged car, so we can provide you the most accurate estimate. Once close up, one further up.One at an angle to the left, and one at angle to the right.</div>
-             <h3>Take the first photo from straight on</h3>
+             <h3>Take the first photo from  close up - vertically</h3>
              <p></p>
              <center>
-               <%= image_tag("photo1.jpg", :class => "car_photo")%>
+               <%= image_tag("photo1.png", :class => "car_photo")%>
                <br/>
                <%= f.file_field :photo1, required: 'true'  %>
              </center>
@@ -103,8 +104,8 @@
           <!--step 5!-->
           <wizard>Step 5</wizard>
           <section>
-            <h3>Now take a photo from a side angle</h3>
-            <%= image_tag("photo2.jpg", :class => "car_photo")%>
+            <h3>Now take a photo further away - horizontally</h3>
+            <%= image_tag("photo2.png", :class => "car_photo")%>
             <center>
 
               <%= f.file_field :photo2 , required: 'true' %><br/>

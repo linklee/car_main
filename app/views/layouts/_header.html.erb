@@ -9,7 +9,8 @@
     <a href="appointment" class="smoothScroll">Appointment</a>
     <a href="#ba" class="smoothScroll ba-link">before/after</a>
     <a href="/blog" class="smoothScroll ba-link">Our blog</a>
-
+    <a target="_blank" href='<%= PagePart.find_by(page_name: 'yelp_url').text%>' class='smoothScroll '>Our reviews</a>
+  
 
     <%= part =PagePart.find_by(page_name: 'links')
     if part
@@ -85,7 +86,7 @@
 
           </nav>
           <button style= "    float: right;
-    margin-right: -250px;" onclick = "  jivo_api.open();" class = "chat_button_new  btn btn-medium btn-primary">Chat</button>
+          margin-right: -250px;" onclick = "  jivo_api.open();" class = "chat_button_new  btn btn-medium btn-primary">Chat</button>
         </div>
       </div>
     </header>
@@ -98,7 +99,7 @@
        <h1 style="display:inline;font-size:2.5em">Free online estimate</h1> 
        <a  href="/new" class="btn btn-medium btn-danger" style="margin-top:-12px;margin-left:5px">start here</a>
      </center>
-   
+
    </div>
    <% else -%>
    <div style="height:30px"></div>
