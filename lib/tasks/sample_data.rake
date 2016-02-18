@@ -8,7 +8,7 @@ namespace :db do
 
  PagePart.create!(  page_name: "12_photo_url",
     text: "/photo2.jpg")
-exit
+
 
  #auto glass repair
      PagePart.create!(  page_name: "insurance_claim",
