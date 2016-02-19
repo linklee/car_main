@@ -15,6 +15,9 @@ gem "font-awesome-rails"
 gem 'sprockets-rails'
 gem 'rest-client'
 gem 'blogo'
+gem 'fog'
+gem 'carrierwave-aws'
+gem "figaro"
 
 group :development, :test do
   gem 'sqlite3'

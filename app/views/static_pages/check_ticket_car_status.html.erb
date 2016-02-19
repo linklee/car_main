@@ -81,7 +81,7 @@
 			(1..8).each do |i| 
 				@photo = @car_photo["p" + i.to_s]
 				if @photo != nil 
-					@url = "/uploads/car_photo/p" + i.to_s + "/" + @car_photo.id.to_s + "/" + @photo.to_s %> 
+					@url = "https://bucket-main.s3.amazonaws.com/uploads/car_photo/p" + i.to_s + "/" + @car_photo.id.to_s + "/" + @photo.to_s %> 
 					<div class="main-wrap  wrap-<%= i %> hidden" style="cursor:pointer;background: rgba(0,0,0,0.8);position:fixed;top:57px; left:0;right:0;bottom:0">
 
 						<div style="display:block;" class="photo-wrap">
