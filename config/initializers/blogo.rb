@@ -1,7 +1,7 @@
 Blogo.configure do |config|
   # Edit this to match the subject of your blog
-  config.site_title    = 'Blogo'
-  config.site_subtitle = 'Mountable blog engine for Ruby on Rails'
+  config.site_title    = 'Blog'
+  config.site_subtitle = 'Fast autobody center'
 
   # Supported languages: :html, :markdown
   config.markup_lang = :html

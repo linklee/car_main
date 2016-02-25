@@ -40,11 +40,20 @@ class LeadsController < ApplicationController
       :subject => "Request successfully created!",
       :text => "Thank you for using our service. We will contact you as soon as possible to give you our estimation. Your ticket number is "  + @lead.ticket.to_s
 
-      #email to admin
+      #email to me
       RestClient.post "https://api:key-f99e5c3db48a9ad293da99a2b7e9da0b"\
       "@api.mailgun.net/v3/sandbox43f2b94d5491492fb7be34200bc81352.mailgun.org/messages",
       :from => "Fast Autobody Center <fbc@sandbox43f2b94d5491492fb7be34200bc81352.mailgun.org>",
       :to => "nevernight721@gmail.com",
+      #"edwineyvazian@gmail.com",
+      :subject => "New customer!",
+      :text =>  "name: " + @lead.name + " phone: " + @lead.phone + " ticket: " + @lead.ticket.to_s
+
+ #email to admin
+      RestClient.post "https://api:key-f99e5c3db48a9ad293da99a2b7e9da0b"\
+      "@api.mailgun.net/v3/sandbox43f2b94d5491492fb7be34200bc81352.mailgun.org/messages",
+      :from => "Fast Autobody Center <fbc@sandbox43f2b94d5491492fb7be34200bc81352.mailgun.org>",
+      :to => "edwineyvazian@gmail.com",
       #"edwineyvazian@gmail.com",
       :subject => "New customer!",
       :text =>  "name: " + @lead.name + " phone: " + @lead.phone + " ticket: " + @lead.ticket.to_s

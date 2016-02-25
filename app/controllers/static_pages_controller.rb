@@ -69,15 +69,22 @@ end
 def make_appointment
 
   flash[:success] = "Request successfully created!" 
-
+  # to me
   RestClient.post "https://api:key-f99e5c3db48a9ad293da99a2b7e9da0b"\
   "@api.mailgun.net/v3/sandbox43f2b94d5491492fb7be34200bc81352.mailgun.org/messages",
   :from => "Mailgun Sandbox <postmaster1@sandbox43f2b94d5491492fb7be34200bc81352.mailgun.org>",
-  :to => "jonsstark <nevernight721@gmail.com>",
+  :to => "nevernight721@gmail.com",
   :subject => "Customer wants to make an appointment",
   :text => "name: " + params[:name].to_s+ " --- phone: " + params[:phone].to_s + "---- details" + params[:text].to_s  
   redirect_to "/thanks"
-
+  #to admin
+  RestClient.post "https://api:key-f99e5c3db48a9ad293da99a2b7e9da0b"\
+  "@api.mailgun.net/v3/sandbox43f2b94d5491492fb7be34200bc81352.mailgun.org/messages",
+  :from => "Mailgun Sandbox <postmaster1@sandbox43f2b94d5491492fb7be34200bc81352.mailgun.org>",
+  :to => "edwineyvazian@gmail.com",
+  :subject => "Customer wants to make an appointment",
+  :text => "name: " + params[:name].to_s+ " --- phone: " + params[:phone].to_s + "---- details" + params[:text].to_s  
+  redirect_to "/thanks"
 end
 def pages
   @page_parts = PagePart.where(page_name: params[:page])
