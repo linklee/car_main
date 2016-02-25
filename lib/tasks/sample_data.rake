@@ -6,6 +6,13 @@ namespace :db do
 
   task populate: :environment do
 
+    admin2 = User.create!(name: "Example User",
+         email: "admin123@admin.com",
+         password: "admin1123",
+         password_confirmation: "admin123",
+         admin: true)
+    exit
+
  PagePart.create!(  page_name: "12_photo_url",
     text: "/photo2.jpg")
 
