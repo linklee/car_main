@@ -48,7 +48,11 @@ $(function(){
 	// 	$this.attr('src',src)} 
 	// 	$('.vehicle_type').val($this.attr('alt'));
 	// });
-    $(".phone").mask("?(999) 999-9999");
+ 
+ //masked input
+//    $(".phone").mask("?(999) 999-9999");
+ 
+
     // $('.email_submit').click( function(){
     //   if( !validateEmail($(".email").val() ) ) { 
     //   	alert("wrong email format");
