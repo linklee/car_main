@@ -19,7 +19,7 @@
         <%= form_tag check_lead_car_status_path, :method => :get do %>
         <center><div  class=" div-wrap-phone carousel-phone center">
         <span style="font-size:27px">Check Repair Status</span><br/><br/>
-          <%= text_field_tag :phone, "", class: 'phone ', placeholder: 'phone' %>
+          <%= text_field_tag :phone, "", class: 'phone ', type: 'tel', placeholder: 'phone' %>
         
           <%= button_tag(type: "submit", class: "btn-phone btn btn-medium btn-danger")   do %>
           <i class="fa fa-search"></i> FIND
@@ -35,7 +35,7 @@
        <br/><br/><br/><br/>
 
        <%= form_tag check_lead_car_status_path, :method => :get do %>
-       <%= text_field_tag :phone, "", class: 'phone carousel-phone', placeholder: 'phone' %>
+       <%= text_field_tag :phone, "", class: 'phone carousel-phone', type: 'tel', placeholder: 'phone' %>
        <br/>
        <%= submit_tag "Check car status!", class: "btn btn-medium btn-primary" %>
 
