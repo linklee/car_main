@@ -79,13 +79,14 @@ $(function(){
 		onFinished: function (event, currentIndex)
 		{
 			$('.email_submit').click();
+			$('a[href="#finish"]').addClass('disabled cursor-default');
 		}
 	});
 
-// remove jovochat button if mobile
-if($(window).width() <700) {
- 	$('.jivo-iframe-container-bottom').remove()
-}
+// remove jivochat button if mobile
+// if($(window).width() <700) {
+//  	$('.jivo-iframe-container-bottom').remove()    display: none!important;
+// }
 	//not validate when we click on prev link
 	var prev = $("a[href='#next']");
 	$(document.body).on("click", "a[href='#previous']", function(){
