@@ -14,7 +14,7 @@ $(function(){
  //            $('.fill')[0].style.height =" 100%";
  //        }
  //    }
- 
+
 	//  if(width <330) { $('.logo-sign').addClass('hidden');}
 	// };
 	//hide menu
@@ -81,6 +81,11 @@ $(function(){
 			$('.email_submit').click();
 		}
 	});
+
+// remove jovochat button if mobile
+if($(window).width() <700) {
+ 	$('.jivo-iframe-container-bottom').remove()
+}
 	//not validate when we click on prev link
 	var prev = $("a[href='#next']");
 	$(document.body).on("click", "a[href='#previous']", function(){
