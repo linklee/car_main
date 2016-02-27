@@ -153,7 +153,8 @@
      }
    }
  @media (max-width: 700px){
-  .jivo-iframe-container-bottom {
-    display: none!important;
+  
+  div#jivo-iframe-container{
+   display: none!important;
   }
 }
