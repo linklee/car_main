@@ -119,6 +119,7 @@
         <% end %>
 
       </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
       <script>
         $(document).ready(function() {
          // / $('map').imageMapResize(); 
@@ -132,8 +133,8 @@
     car =$('.car400')
   }    
 
-
-  $("map").click(function(e) {
+$(document.body).on("click touchstart", ".map", function(e){
+//  $("map").click(function(e) {
     var offset = car.offset();
     var relativeX = (e.pageX - offset.left);
     var relativeY = (e.pageY - offset.top);
