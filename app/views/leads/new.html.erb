@@ -137,6 +137,7 @@
 $(document.body).on("click touchstart", "map", function(e){
   //$("map").click(function(e) {
   //$("map").on("click touchstart", function(e) {
+    alert(1);
     var offset = car.offset();
     var relativeX = (e.pageX - offset.left);
     var relativeY = (e.pageY - offset.top);
