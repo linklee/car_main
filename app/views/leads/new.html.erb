@@ -134,10 +134,10 @@
     car =$('.car400')
   }    
 
-$(document.body).on("click touchstart", "map", function(e){
+$(document.body).on("click ", "map", function(e){
   //$("map").click(function(e) {
   //$("map").on("click touchstart", function(e) {
-    alert(1);
+ 
     var offset = car.offset();
     var relativeX = (e.pageX - offset.left);
     var relativeY = (e.pageY - offset.top);
@@ -153,6 +153,27 @@ $(document.body).on("click touchstart", "map", function(e){
   val+=  '##'+ relativeX+  '---'  + relativeY;
   $('.coords').val(val);
 });
+
+$(document.body).on("touchstart", "map", function(e){
+  //$("map").click(function(e) {
+  //$("map").on("click touchstart", function(e) {
+    alert(1);
+    var offset = car.offset();
+    var relativeX = ( e.originalEvent.touches[0].pageX - offset.left);
+    var relativeY = ( e.originalEvent.touches[0].pageY - offset.top);
+  //alert(relativeX+':'+relativeY);
+  //console.log(relativeX+':'+relativeY);
+  //$(".position").val("afaf");   
+
+  $("body").append("<img  class='check-car' src='<%=asset_path('check.png')=%> ' style= 'cursor:pointer;color:red;position: absolute;top:"+ (e.pageY-15)  +"px;left: "+ (e.pageX-15)+"px' class=' '></img>");
+  var val =$('.coords').val();
+  if (val == "") {
+    val = car.width();
+  }  
+  val+=  '##'+ relativeX+  '---'  + relativeY;
+  $('.coords').val(val);
+});
+
   $(document.body).on("click touchstart", ".check-car", function(){
     $(this).remove();
   })
