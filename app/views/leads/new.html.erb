@@ -3,6 +3,7 @@
 <h1 style="display:none">New car</h1>
 <div class=" center  ">
 
+
   <%= render 'shared/error_messages_leads' %>
 
   <%= form_for(@lead,:html => {:class => 'new_form', :onkeypress => "return event.keyCode != 13;"}) do |f| %>
@@ -119,7 +120,7 @@
         <% end %>
 
       </div>
-
+    
       <script>
         $(document).ready(function() {
          // / $('map').imageMapResize(); 
@@ -133,8 +134,9 @@
     car =$('.car400')
   }    
 
-$(document.body).on("click touchstart", ".map", function(e){
-//  $("map").click(function(e) {
+$(document.body).on("click touchstart", "map", function(e){
+  //$("map").click(function(e) {
+  //$("map").on("click touchstart", function(e) {
     var offset = car.offset();
     var relativeX = (e.pageX - offset.left);
     var relativeY = (e.pageY - offset.top);
