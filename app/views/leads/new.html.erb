@@ -149,7 +149,7 @@
   val+=  '##'+ relativeX+  '---'  + relativeY;
   $('.coords').val(val);
 });
-  $(document.body).on("click", ".check-car", function(){
+  $(document.body).on("click touchstart", ".check-car", function(){
     $(this).remove();
   })
   $('.steps > ul[role="tablist"] > li > a').addClass('pure-button ');
