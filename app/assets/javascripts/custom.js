@@ -74,7 +74,7 @@ $(function(){
 		{
 			form.validate().settings.ignore = ":disabled";
 
-			if form.valid() {
+			if (form.valid()) {
 				$('.email_submit').click();
 				$('a[href="#finish"]').addClass('disabled cursor-default');
 
