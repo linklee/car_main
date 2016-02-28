@@ -137,7 +137,7 @@
 $(document.body).on("click ", "map", function(e){
   //$("map").click(function(e) {
   //$("map").on("click touchstart", function(e) {
- alert('click');
+ //alert('click');
     var offset = car.offset();
     var relativeX = (e.pageX - offset.left);
     var relativeY = (e.pageY - offset.top);
@@ -154,7 +154,7 @@ $(document.body).on("click ", "map", function(e){
   $('.coords').val(val);
 });
 
-$(document.body).on("tap", "map", function(e){
+/*$(document.body).on("tap", "map", function(e){
  
   //$("map").click(function(e) {
   //$("map").on("click touchstart", function(e) {
@@ -173,9 +173,9 @@ $(document.body).on("tap", "map", function(e){
   val+=  '##'+ relativeX+  '---'  + relativeY;
   $('.coords').val(val);
 });
-
+*/
   $(document.body).on("click", ".check-car", function(){
-    alert('remove')
+   // alert('remove')
     $(this).remove();
   })
   $('.steps > ul[role="tablist"] > li > a').addClass('pure-button ');
