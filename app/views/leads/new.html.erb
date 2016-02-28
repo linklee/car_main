@@ -155,7 +155,7 @@ $(document.body).on("click ", "map", function(e){
 });
 
 $(document.body).on("touchstart", "map", function(e){
-  alert('touch');
+ 
   //$("map").click(function(e) {
   //$("map").on("click touchstart", function(e) {
     var offset = car.offset();
@@ -175,6 +175,7 @@ $(document.body).on("touchstart", "map", function(e){
 });
 
   $(document.body).on("click", ".check-car", function(){
+    alert('remove')
     $(this).remove();
   })
   $('.steps > ul[role="tablist"] > li > a').addClass('pure-button ');
