@@ -9,7 +9,21 @@
   <%= form_for(@lead,:html => {:class => 'new_form', :onkeypress => "return event.keyCode != 13;"}) do |f| %>
   <div>
    
+  <wizard>Step 3</wizard>
 
+            <section>
+             <h3>Select damaged areas</h3>  
+             <%= f.text_field :coords, placeholder: 'coords', required: 'true', class: 'coords '%>
+
+             <%= render 'layouts/coords' %>
+
+             <div style="padding-top 30px;text-align:left;width:200px;margin:0 auto;padding-left:120px">
+               <input style="display:inline;margin-top:-2px" type="radio" name="seat" value="Driver's seat" /> Driver's seat<br>
+               <input style="display:inline;margin-top:-2px" type="radio" name="seat" value="Passenger's seat"/> Passenger's seat
+               <br><br>
+             </div>
+
+           </section>
    <wizard>Step 1</wizard>
    <section>
     <h3>contact information</h3>
@@ -62,21 +76,7 @@
          <!-- coords-->  
 
 
-            <wizard>Step 3</wizard>
-
-            <section>
-             <h3>Select damaged areas</h3>  
-             <%= f.text_field :coords, placeholder: 'coords', required: 'true', class: 'coords '%>
-
-             <%= render 'layouts/coords' %>
-
-             <div style="padding-top: 30px;text-align:left;width:200px;margin:0 auto;padding-left:120px">
-               <input style="display:inline;margin-top:-2px" type="radio" name="seat" value="Driver's seat" /> Driver's seat<br>
-               <input style="display:inline;margin-top:-2px" type="radio" name="seat" value="Passenger's seat"/> Passenger's seat
-               <br><br>
-             </div>
-
-           </section>
+          
            <!--end coords!-->
            <wizard>Step 4</wizard>
            <section>
@@ -173,7 +173,7 @@ $(document.body).on("touchstart", "map", function(e){
   $('.coords').val(val);
 });
 
-  $(document.body).on("click touchstart", ".check-car", function(){
+  $(document.body).on("click", ".check-car", function(){
     $(this).remove();
   })
   $('.steps > ul[role="tablist"] > li > a').addClass('pure-button ');
