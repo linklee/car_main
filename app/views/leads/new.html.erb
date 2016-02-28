@@ -9,21 +9,7 @@
   <%= form_for(@lead,:html => {:class => 'new_form', :onkeypress => "return event.keyCode != 13;"}) do |f| %>
   <div>
    
-  <wizard>Step 3</wizard>
-
-            <section>
-             <h3>Select damaged areas</h3>  
-             <%= f.text_field :coords, placeholder: 'coords', required: 'true', class: 'coords '%>
-
-             <%= render 'layouts/coords' %>
-
-             <div style="padding-top 30px;text-align:left;width:200px;margin:0 auto;padding-left:120px">
-               <input style="display:inline;margin-top:-2px" type="radio" name="seat" value="Driver's seat" /> Driver's seat<br>
-               <input style="display:inline;margin-top:-2px" type="radio" name="seat" value="Passenger's seat"/> Passenger's seat
-               <br><br>
-             </div>
-
-           </section>
+    
    <wizard>Step 1</wizard>
    <section>
     <h3>contact information</h3>
@@ -73,14 +59,28 @@
               margin: 8px;cursor:pointer"></i> 
 
             </section>
-         <!-- coords-->  
+            <!-- coords-->  
 
+            <wizard>Step 3</wizard>
 
-          
+            <section>
+             <h3>Select damaged areas</h3>  
+             <%= f.text_field :coords, placeholder: 'coords', required: 'true', class: 'coords '%>
+
+             <%= render 'layouts/coords' %>
+
+             <div style="padding-top 30px;text-align:left;width:200px;margin:0 auto;padding-left:120px">
+               <input style="display:inline;margin-top:-2px" type="radio" name="seat" value="Driver's seat" /> Driver's seat<br>
+               <input style="display:inline;margin-top:-2px" type="radio" name="seat" value="Passenger's seat"/> Passenger's seat
+               <br><br>
+             </div>
+
+           </section>
+           
            <!--end coords!-->
            <wizard>Step 4</wizard>
            <section>
-           <div class="alert alert-success">Please, provide a photos of the damaged car, so we can provide you the most accurate estimate. Once close up, one further up.One at an angle to the left, and one at angle to the right.</div>
+             <div class="alert alert-success">Please, provide a photos of the damaged car, so we can provide you the most accurate estimate. Once close up, one further up.One at an angle to the left, and one at angle to the right.</div>
              <h3>Take the first photo from  close up - horizontally</h3>
              <p></p>
              <center>
@@ -120,7 +120,7 @@
         <% end %>
 
       </div>
-    
+      
       <script>
         $(document).ready(function() {
          // / $('map').imageMapResize(); 
@@ -134,13 +134,13 @@
     car =$('.car400')
   }    
 
-$(document.body).on("click ", "map", function(e){
+  $(document.body).on("click ", "map", function(e){
   //$("map").click(function(e) {
   //$("map").on("click touchstart", function(e) {
  //alert('click');
-    var offset = car.offset();
-    var relativeX = (e.pageX - offset.left);
-    var relativeY = (e.pageY - offset.top);
+ var offset = car.offset();
+ var relativeX = (e.pageX - offset.left);
+ var relativeY = (e.pageY - offset.top);
   //alert(relativeX+':'+relativeY);
   //console.log(relativeX+':'+relativeY);
   //$(".position").val("afaf");   
@@ -174,12 +174,12 @@ $(document.body).on("click ", "map", function(e){
   $('.coords').val(val);
 });
 */
-  $(document.body).on("click", ".check-car", function(){
+$(document.body).on("click", ".check-car", function(){
    // alert('remove')
-    $(this).remove();
-  })
-  $('.steps > ul[role="tablist"] > li > a').addClass('pure-button ');
-  $('.steps > ul[role="tablist"] > li > a').addClass('xxx');
+   $(this).remove();
+ })
+$('.steps > ul[role="tablist"] > li > a').addClass('pure-button ');
+$('.steps > ul[role="tablist"] > li > a').addClass('xxx');
 });
 // $('.check-car').on('click', function(){
 //   alert(1);
@@ -205,5 +205,5 @@ function buildCoords(){
   
   div#jivo-iframe-container.jivo-iframe-container-bottom{
    display: none!important;
-  }
+ }
 }</style>
